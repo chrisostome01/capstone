@@ -1,0 +1,185 @@
+/* larg phones */
+@media screen and (min-width:500px){
+    .m-header {
+        width: 100%;
+        height: 450px;      
+    }
+   
+}
+/* tablet */
+@media screen and (min-width:759px){
+    .m-header {
+        width: 100%;
+        height: 400px;      
+    }
+    .m-quotes p{
+        font-size: 18px;
+    }
+}
+/* min-lapstop */
+@media screen and (min-width:900px){
+    .header-wrapper{
+        max-height: 95%;
+        padding-bottom: 20px;
+    }
+    .mob{
+        display: none;
+    }
+    .oscreen{
+        display: flex;
+        justify-content: center;
+    }
+    .flexed{
+        display: flex;
+        justify-content: space-between;
+    }
+    /* start:: nav bar */
+    .reveal{
+        display: none;
+    }
+    .nav{
+        width: 75%;
+    }
+    .nav ul{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        top: 0;
+        align-items: center;
+        height: 100%;
+        position: relative;
+        justify-content: space-between;
+        transform: translateX(0%);
+    }
+    .nav ul li a{
+        font-size: 12px;
+    }
+    .nav ul li {
+        margin: 12px;
+    }
+    .log{
+        width: 20%;
+    }
+    .nav{
+        width: 80%;
+    }
+    .c-padding{
+        padding-left: 60px ;
+        padding-right: 60px ;
+    }
+    /* End:: nav bar */
+    /* Start:: header content */
+    .header-image-controller{
+        width: 50% ;
+        position: relative;
+        margin-left:70px ;
+    }
+    .image-yellow-shadow{
+        position: absolute;
+        left: -5%;
+        top: -5%;
+        width: 280px;
+        height: 379px;   
+        background-color: var(--underline);
+        z-index: 1;
+        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+        border-radius: 10px;
+    }
+    .header-image-oscreen{      
+        position: absolute;
+        width: 280px;
+        height: 379px; 
+        background-image:  linear-gradient(0deg, rgba(0, 0, 0, 0.426), rgba(0, 0, 0, 0.363)),url("../images/8604D572-1E97-4429-BB41-8E9602F21499.png");
+        z-index: 2;
+        background-size: cover;
+        background-repeat: no-repeat;
+        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+        border-radius: 10px;
+    }
+    .btn-reach-me button{
+        width: 187px;
+    }
+    .cr{
+        text-align: right;
+    }
+    /* End:: header content */
+}
+
+/* laptop */
+@media screen and (min-width:1024px) {
+    .header-wrapper{
+        max-height: 100%;
+        padding-bottom: 90px;
+    }
+    .nav ul li a{
+        font-size: 15px;
+    }
+    .log{
+        width: 30% ;
+        font-size:25px;
+    }
+    .nav{
+        width:  70%;
+    }
+    .quotes p{
+        font-size: 19px;
+    }
+    .header-image-controller{
+        left: 10%;
+    }
+    .image-yellow-shadow{
+        width: 340px;
+        height: 410px;   
+        right: -12%;
+        background-color: var(--underline);
+    }
+    .header-image-oscreen{    
+        width: 340px;
+        height: 420px;
+        background-image:  linear-gradient(0deg, rgba(0, 0, 0, 0.426), rgba(0, 0, 0, 0.363)),url("../images/8604D572-1E97-4429-BB41-8E9602F21499.png");
+      
+    }
+    .oscreen.c-padding{
+        padding-left: 100px;
+        padding-right: 100px;
+    }
+    .body-container{
+        padding-left: 100px;
+        padding-right: 100px;
+    }
+    .btn-reach-me button{
+        width: 400px;
+        height: 60px;
+        font-size: 20px;
+    }
+}
+
+/* Large Screen */
+@media screen and (min-width:1400px) and  (min-height:870px){
+    .header-wrapper{
+        height: 50vh;
+    }
+}
+@media screen and (min-width:1400px) {
+    .c-padding{
+        padding-left:200px;
+        padding-right:200px;
+    }
+    .oscreen.c-padding{
+        padding-left: 230px;
+        padding-right: 230px;
+    }   
+    .body-container{
+        padding-left: 230px;
+        padding-right: 230px;
+    }
+    .quotes p{
+        font-size: 20px; 
+    }
+    .cr{
+        margin-top:10px;        
+    }
+    .cr p{
+        color: rgba(255, 255, 255, 0.801);
+    }
+}
