@@ -1,6 +1,13 @@
-.form-container{
-  
+.card-container{
+    position: relative;
+    height: 400px;
+    width: 85%;
+}
+.form-container{  
     width: 90%;
+    position: absolute;
+    right: 50%;
+    transform: translate(50%,-50%);
 }
 .form-header{    
     height: 100px;
@@ -13,6 +20,7 @@
     align-items: center;
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
+  
 }
 .form-header p {
     font-family: 'Roboto',sans-serif;
