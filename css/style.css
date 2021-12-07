@@ -46,6 +46,7 @@ html{
 .content-wrapper{
     height: 100%;
     width: 100%;
+    overflow-x: hidden;
 }
 .header-wrapper{
     background-color:var(--main);
@@ -74,16 +75,18 @@ html{
     font-family: 'Roboto', sans-serif; 
 }
 .nav ul {
+    padding: 0;
     position: absolute;
     right: 0px;
     height: 100vh;
     top: 8vh;
     background-color: var(--main);
-    display: flex;
+    display: hidden;
     flex-direction: column;
     align-items: center;
     transform: translateX(100%);
-    transition: transform 0.5s ease-in;
+    transition: transform 0.5s ease-in-out;
+    z-index: 9999999;
 }
 .nav ul li{
     margin: 20px;
@@ -136,6 +139,34 @@ html{
     border: 1px solid var(--highlight); 
     color: var(--highlight);   
     background-color:  rgba(255, 255, 255, 0) ;
+}
+.showNav ul{   
+    transform: translateX(0%); 
+    display: flex;
+}
+@keyframes navAnimation{
+
+    from{
+        opacity:0;
+        transform: translateX(50px);
+    }
+    to{
+        opacity: 1;
+        transform: translateX(0px);
+    }
+
+}
+.toggleBugger .line1{
+    transform:  rotate(-45deg) translate(-5px,2px);
+    
+ }
+.toggleBugger .line2{
+    opacity: 0;
+    
+}
+.toggleBugger .line3{
+    transform:  rotate(45deg) translate(-5px,-2px);
+    
 }
 /* End:: navbar */
 
@@ -303,6 +334,7 @@ html{
     position: relative;    
     width: 50%;
     height: 600px;
+    display: none;
   }
   .left-div div{
     position: absolute;
@@ -313,9 +345,14 @@ html{
     left: 9%;
     top:9%;
   }
+  .cbody.main-bg{
+    background-color: rgba(255, 255, 255, 0);
+    padding-top:20px;
+    margin-left:-20px;
+  }
   /* right div */
   .rigth-div{
-    width: 50%;
+    width: 100%;
     height: 560px;
     margin-left: 20px;
   }
@@ -324,6 +361,10 @@ html{
     height: 100%;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     border-radius: 10px;
+  }
+  .cbody.main-bg p{
+      font-size: 15px;
+      font-weight: 400;
   }
   .rigth-div .main-bg{
     padding: 20px;
