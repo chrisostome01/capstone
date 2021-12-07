@@ -10,8 +10,21 @@
     .l-content{
         font-size: 20px;
         margin-left:10px;
+    }   
+ 
+}
+@media screen and (min-width:513px){
+    .leader{
+        width: 80%;  
+        margin: 1rem;     
     }
-   
+    .r-card{
+        width: 80%;  
+        max-height: 712px;
+    }
+    .more{
+        width: 80%;
+    }
 }
 /* tablet */
 @media screen and (min-width:759px){
@@ -21,8 +34,19 @@
     }
     .m-quotes p{
         font-size: 18px;
+    }    
+    .leader{
+        width: 340px;  
+        margin: 1rem;     
     }
-    
+    .r-card{
+        width: 340px;  
+        max-height: 712px;
+    }
+    .more{
+        width: 100%;
+        padding-right: 1rem ;
+    }
 }
 /* min-lapstop */
 @media screen and (min-width:900px){
@@ -37,6 +61,7 @@
         display: flex;
         justify-content: center;
     }
+    
     .flexed{
         display: flex;
         justify-content: space-between;
@@ -112,6 +137,10 @@
         text-align: right;
     }
     /* End:: header content */
+    .more{
+        width: 100%;
+        padding-right: 12rem ;
+    }
 }
 
 /* laptop */
@@ -152,15 +181,20 @@
         padding-left: 100px;
         padding-right: 100px;
     }
-    .body-container{
+    .content-padding{
         padding-left: 100px;
         padding-right: 100px;
     }
+    /* .body-container{
+        padding-left: 100px;
+        padding-right: 100px;
+    } */
     .btn-reach-me button{
         width: 400px;
         height: 60px;
         font-size: 20px;
     }
+    
     .left-div{
         display: block;
     }
@@ -170,18 +204,29 @@
         margin-left: 20px;
     }
     .cbody.main-bg{
-        background-color: var(--main);      
-        padding: 20px;  
+        background-color: var(--main);   
+    }
+    .more{
+        width: 100%;
+        padding-right: 3.1rem ;
     }
 }
 
 /* Large Screen */
 @media screen and (min-width:1400px) and  (min-height:870px){
     .header-wrapper{
-        height: 50vh;
+        height: 70vh;
     }
 }
 @media screen and (min-width:1400px) {
+    .leader{
+        width: 310px;  
+        margin: 1rem;     
+    }
+    .r-card{
+        width: 300px;  
+        max-height: 712px;
+    }
     .c-padding{
         padding-left:200px;
         padding-right:200px;
@@ -190,10 +235,14 @@
         padding-left: 230px;
         padding-right: 230px;
     }   
-    .body-container{
+    .content-padding{
         padding-left: 230px;
         padding-right: 230px;
     }
+    /* .body-container{
+        padding-left: 230px;
+        padding-right: 230px;
+    } */
     .quotes p{
         font-size: 20px; 
     }
@@ -202,5 +251,9 @@
     }
     .cr p{
         color: rgba(255, 255, 255, 0.801);
+    }
+    .more{
+        width: 100%;
+        padding-right: 8rem ;
     }
 }

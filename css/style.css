@@ -5,6 +5,7 @@ font-family: 'Roboto', sans-serif; */
 *{
     padding: 0%;
     margin: 0%;
+    box-sizing: border-box;
 }
 :root{
     --main : #0A69C1;
@@ -16,16 +17,17 @@ body{
     height: 100%;
     width: 100%;
     overflow-x: hidden;   
+    overflow-y: hidden; 
     background: linear-gradient(0deg, rgba(56, 123, 160, 0.06), rgba(56, 123, 160, 0.06)), url("../images/email-pattern.png");
 }
 html{
     width:100%;
-    height: 100%;
     overflow-x: hidden;
-    overflow-y: hidden; 
+    
 }
 .main-bg{
-    padding:0px;
+    padding-top:20px;
+    padding-bottom:20px;
     margin: 0px;
     background-color: var(--main);
 }
@@ -267,8 +269,7 @@ html{
   }
   .card-container{
     width: 100%;
-    margin-top:20px;
-    margin-bottom:20px ;
+    margin-top:40px;
   }
   .body-content-header{
     width: 100%;
@@ -292,8 +293,6 @@ html{
     width:95px;
   }
   .cbody{
-    padding-top: 20px;
-    padding-bottom: 20px;
     box-shadow: 3px 4px 4px 2px rgba(0, 0, 0, 0.14);
     border-radius: 10px;
     width: 100%;
@@ -324,6 +323,7 @@ html{
   }
   .body-container{
     position: relative;    
+    width: 100%;
   }
   .flexed-content{
     display: flex;
@@ -346,9 +346,8 @@ html{
     top:9%;
   }
   .cbody.main-bg{
-    background-color: rgba(255, 255, 255, 0);
-    padding-top:20px;
-    margin-left:-20px;
+    background-color: rgba(255, 255, 255, 0);    
+    width: 100%;
   }
   /* right div */
   .rigth-div{
@@ -368,6 +367,7 @@ html{
   }
   .rigth-div .main-bg{
     padding: 20px;
+    width: 100%;
   }
   .info.underline{
       width: 40px;
@@ -399,17 +399,18 @@ html{
     display: flex;
     -ms-flex-wrap: wrap;
     flex-wrap: wrap;
+    width: 100%;
   }
-  .set>div{
-    flex: 0 0 25%;
+ .set{
+      width: 100%;
+  }
+  .set div{
+    flex: 0 25% 25%;
   }
   .leader{
-    width: 281px;
-    top: 14px;
+    width: 100%;
     border-radius: 10px;
-    padding:0;
-    margin-left: 70px;
-    margin-top: 20px;
+    margin: 2rem;
   }
   .card-component{
     background: linear-gradient(0deg, #FFFFFF, #FFFFFF), linear-gradient(0deg, #FFFFFF, #FFFFFF), #FFFFFF;
@@ -444,15 +445,11 @@ html{
   }
   .r-card{
     max-height: 412px;
-    width: 281px;
-    left: 39px;
-    top: 14px;
-    border-radius: 10px;
     background: linear-gradient(0deg, #FFFFFF, #FFFFFF), linear-gradient(0deg, #FFFFFF, #FFFFFF), #FFFFFF;
-    box-shadow: 3px 4px 4px 2px rgba(0, 0, 0, 0.14); 
-    margin-left: 70px;
-    margin-top: 20px;
-    margin-bottom: 20px;
+    box-shadow: 3px 4px 4px 2px rgba(0, 0, 0, 0.14);
+    border-radius: 10px;
+    width: 100%;
+    margin: 1rem;
 }
   .r-card-body{
     padding: 12px;
@@ -494,6 +491,14 @@ html{
     display: flex;
     justify-content: right;
     margin-top: 20px;
+  }
+  .more{
+    width:100% ;
+    float: right;
+    display: flex;
+    justify-content: right;
+    margin-top: 20px;
+    margin-right: 1rem;
   }
   .read-more{
     font-family: 'Roboto', sans-serif;
@@ -548,25 +553,24 @@ html{
 
 /* Start footer */
 .footer-section {
-    max-width: 100%;
     border-radius: 0px;
-    height: 600px;
-    background-color: var(--main);    
-    margin-top: 6rem;
+    background-color: var(--main);
+    float: left;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;  
+    width: 100%;
 }
 .footer-brand{
     width: 100%;
-    height: 8vh;
+    height: 20%;
     padding: 2rem;
     text-align: center;
-    align-items: center;
+    font-size: 25px;
     font-family: 'Roboto', sans-serif;
-    font-style: normal;
-    font-weight: bold;
-    font-size: 30px;
-    line-height: 47px;
-    text-align: center;
-    position: relative;
+    
 }
 .follow.underline{
     width: 85px;
@@ -582,8 +586,8 @@ html{
     line-height: 23px;
 }
 .footer-body{
-    display: flex;
-    justify-content: space-between;
+    min-height: 100%;
+    overflow-y: hidden;
 }
 .social{
     display: flex;
@@ -599,7 +603,6 @@ html{
     font-weight: 400;
     line-height: 20px;
     letter-spacing: 0em;
-
 }
 .social span:hover{
     color: #ffffff;
@@ -615,11 +618,8 @@ html{
     margin-top: 12px;
 }
 .footer-body>div{
-    width: 40%;
-    margin-top: 30px;
-}
-.footer-body{
-    height: 400px;
+    width: 100%;
+    margin: 10px;
 }
 .footer-body .body-content-header{
     margin-bottom: 1rem;
@@ -643,9 +643,8 @@ form .form-fields{
 }
 form input{
     box-shadow: 3px 4px 4px 2px rgba(0, 0, 0, 0.14);
-    width: 323px;
+    width: 100%;
     height: 44px;
-    left: 468px;
     top: 197px;
     text-align: center;
     font-size: 17px;
@@ -657,7 +656,7 @@ form input{
 }
 form textarea{
     box-shadow: 3px 4px 4px 2px rgba(0, 0, 0, 0.14);
-    width: 323px;
+    width: 100%;
     height: 90px;
     left: 468px;
     top: 197px;
@@ -668,16 +667,16 @@ form textarea{
     border-radius: 5px;
     border:none;
     outline: none;
-    display: flex;
     align-items: center;
 }
 .send{
     display:  flex;
-    justify-content: right;
+    justify-content: left;
     align-items: center;
     width: 323px;
     height: 90px;
-    left: 468px;
+    padding: 0;
+    margin-top: -1rem;
 }
 .send button{
     padding: 10px;
@@ -694,8 +693,7 @@ form textarea{
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     transition: 0.1s ease-in;
     cursor: pointer;
-    border-radius: 10px;
-    
+    border-radius: 10px;    
 }
 .send button:hover{
     background-color: var(--main);
@@ -732,3 +730,20 @@ form textarea{
 /* End footer */
 
 /* ============ End::body content  ========= */
+
+/* responsiveness for reuseble component */
+
+@media screen and (min-width:1010px){
+    .footer-body{
+        min-height: 100%;
+        overflow-y: hidden;
+        display: flex;
+        -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+        width: 100%;
+    }
+    .footer-body>div{
+        width: 30%;
+        margin: 10px;
+    }
+}
