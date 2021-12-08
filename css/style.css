@@ -139,6 +139,7 @@ html{
     display: flex;
     align-items: center;
     justify-content: center;
+    cursor: pointer;
 }
 .signup-btn:hover{  
     border: 1px solid var(--highlight); 
@@ -565,6 +566,7 @@ html{
     align-items: center;
     justify-content: center;  
     width: 100%;
+    margin-top: 2rem;
 }
 .footer-brand{
     width: 100%;
