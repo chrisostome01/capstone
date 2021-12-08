@@ -74,7 +74,7 @@
         width: 75%;
     }
     .nav ul{
-        display: flex;
+        display: flex !important;
         flex-direction: row;
         align-items: center;
         top: 0;
