@@ -1,0 +1,39 @@
+.card-container{
+    position: relative;
+    height: 400px;
+    width: 85%;
+}
+.form-container{  
+    width: 90%;
+    position: absolute;
+    right: 50%;
+    transform: translate(50%,-50%);
+}
+.form-header{    
+    height: 100px;
+    left: 339px;
+    top: 252px;
+    color: var(--highlight);
+    background-color: var(--main);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+  
+}
+.form-header p {
+    font-family: 'Roboto',sans-serif;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 40px;
+    line-height: 47px;
+}
+form{
+    width: 446px;
+    display: block;
+    border-radius: 10px;
+}
+form input{
+    width: 85% !important;
+}
