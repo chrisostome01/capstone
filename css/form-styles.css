@@ -11,7 +11,7 @@ html{
 }
 .card-container{
     position: relative !important;
-    height: 100% !important;
+    height: 90vh !important;
     width: 100% !important;
 }
 .form-container{  

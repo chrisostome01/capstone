@@ -19,10 +19,10 @@
                   <div class="log">
                       <h2>MY BRAND</h2>                        
                   </div>
-                  <div class="nav">
-                      <ul>
+                  <div class="nav" id="navbar">
+                    <ul>
                         <li>
-                            <a href="../">Home</a>
+                            <a  href="#">Home</a>
                         </li>
                         <li>
                             <a href="#">About me</a>
@@ -31,7 +31,7 @@
                             <a href="#">Skills</a>
                         </li>
                         <li>
-                            <a href="#">Blog</a>
+                            <a class="active-link" href="./ui/browse.html">Blog</a>
                         </li>
                         <li>
                             <a href="#">Project</a>
@@ -39,19 +39,19 @@
                         <li>
                             <a href="#">Contact</a>
                         </li>
-                        <li >
-                            <button  type="button" id="login" class="login-btn active-btn" onclick="location.href='./login.html'" >Login</button>
+                        <li>
+                            <button class="login-btn"  onclick="location.href='./login.html'">Login</button>
                         </li>
                         <li>
-                            <button class="signup-btn" id="signup" onclick="location.href='./signup.html'">Signup</button>
+                            <button class="signup-btn" onclick="location.href='./signup.html'">Signup</button>
                         </li>
-                      </ul>
-                  </div>
-                  <div class="reveal">
-                      <div></div>
-                      <div></div>
-                      <div></div>
-                  </div>
+                    </ul>
+                </div>
+                <div class="reveal" id="bugger">
+                    <div class="line1"></div>
+                    <div class="line2"></div>
+                    <div class="line3"></div>
+                </div>
               </div>
           </header>
         <!--  End:: header-wrapper  -->
@@ -235,6 +235,7 @@
       <!-- ===================== End:: content Footer ========= -->
      <!--  End:: contents  -->
     </div>        
+    <script src="../js/script.js"></script>
     <!-- ================================== End:: content wrapper ================================== -->
 </body>
 </html>
