@@ -63,27 +63,69 @@
         justify-content: space-between;
         transform: translateX(0%);
     }
+    .c-padding{
+        padding-left: 60px ;
+        padding-right: 60px ;
+    }
+    .content-padding{
+        padding-left: 100px;
+        padding-right: 100px;
+    }
+    .r-card{
+        width: 290px; 
+    }
 }
 @media screen and (min-width:1024px) {    
     .r-card{
-        width: 290px;  
+        width: 230px;  
         max-height: 712px;
     }
     .content-padding{
-        padding-left: 150px;
-        padding-right: 150px;
+        padding-left: 100px;
+        padding-right: 100px;
     }
     .more{
         width: 92%;
     }
 }
 
+
 @media screen and (min-width:1150px) {    
     .r-card{
         width: 290px;  
         max-height: 712px;
     }
+    .c-padding{
+        padding-left:100px !important;
+        padding-right:100px !important;
+    }
+    .content-padding{
+        padding-left: 200px;
+        padding-right: 200px;
+    }
     
+}
+@media screen and (min-width:1090px) {    
+    .r-card{
+        width: 250px;  
+        max-height: 712px;
+    }
+    
+    .c-padding{
+        padding-left:100px !important;
+        padding-right:100px !important;
+    }
+    .content-padding{
+        padding-left: 120px;
+        padding-right: 120px;
+    }
+    
+}
+@media screen and (min-width:1200px) {    
+    .r-card{
+        width: 300px;  
+        max-height: 712px;
+    }   
 }
 @media screen and (min-width:1400px) {
     .leader{
@@ -94,8 +136,13 @@
         width: 300px;  
         max-height: 712px;
     }
+    .c-padding{
+        padding-left:200px !important;
+        padding-right:200px !important;
+    }
     .content-padding{
         padding-left: 230px;
         padding-right: 230px;
     }
+   
 }
