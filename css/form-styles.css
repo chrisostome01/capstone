@@ -1,16 +1,32 @@
-.card-container{
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body{
     position: relative;
-    height: 400px;
-    width: 85%;
+}
+html{
+    width: 100%;
+}
+.card-container{
+    position: relative !important;
+    height: 100% !important;
+    width: 100% !important;
 }
 .form-container{  
-    width: 90%;
     position: absolute;
+    top: 50%;
     right: 50%;
     transform: translate(50%,-50%);
+    min-width: 200px;
+    background: rgba(255, 255, 255, 1);
+    border-radius: 10px;
+    box-shadow: 4px 3px 4px 2px rgba(0, 0, 0, 0.14);
 }
-.form-header{    
+.login .form-header{    
     height: 100px;
+    min-width: 100%;
     left: 339px;
     top: 252px;
     color: var(--highlight);
@@ -22,18 +38,104 @@
     border-top-right-radius: 10px;
   
 }
-.form-header p {
+.login .form-header p {
     font-family: 'Roboto',sans-serif;
     font-style: normal;
     font-weight: bold;
-    font-size: 40px;
+    font-size: 25px;
     line-height: 47px;
 }
-form{
-    width: 446px;
+.login .input-field{
+    margin-bottom: 12px;
+    display: flex;
+    justify-content: center;  
+}
+form.login{
+    width: 280px;
     display: block;
     border-radius: 10px;
 }
-form input{
+form.login input{
     width: 85% !important;
+}
+.login .form-fields{
+    padding: 2rem;
+}
+.login label{
+    color: rgba(32, 32, 32, 0.624);
+    font-family: 'Poppins' ,sans-serif;
+}
+.login .input-field button{
+    margin-top: 12px;
+    width: 100%;   
+    height: 44px;
+    border:none;
+    border-radius: 5px;
+    font-size: 17px;
+    color: rgba(255, 255, 255, 0.603);
+    background-color: var(--main);
+    font-family: 'Poppins' ,sans-serif;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.1s ease-in-out;
+}
+.login .input-field button:hover{   
+    color: rgb(255, 255, 255);    
+}
+.active-btn{
+    border: 1px solid var(--highlight);  
+    background-color: white;
+    color: var(--underline);
+    cursor: pointer;
+}
+.active-btn:hover{  
+    border: 1px solid var(--highlight) !important; 
+    color: var(--highlight)  !important;  
+    background-color: rgba(255, 255, 255, 0); 
+}
+.form-link a{
+    color: var(--main);
+    text-decoration: none;
+    font-family: 'Poppins' ,sans-serif;
+    font-weight: 600;
+}
+
+.form-link{
+    margin-bottom: 12px;
+}
+.icon{
+    background-color: var(--underline);
+    width: 15%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-top-right-radius: 5px ;
+    border-bottom-right-radius: 5px ;
+    box-shadow: 3px 4px 4px 2px rgba(0, 0, 0, 0.17);
+    height: 44px;
+}
+.icon svg{
+    width:18px ;
+    height: 26px;
+}
+ .login input{
+    border-top-right-radius:0px !important;
+    border-bottom-right-radius:0px !important;
+}
+
+
+/* resposniveness  */
+@media screen and (min-width: 600px ) {
+    form.login{
+        width: 400px;
+        display: block;
+        border-radius: 10px;
+    }
+    .login .form-header p {
+        font-family: 'Roboto',sans-serif;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 30px;
+        line-height: 47px;
+    }
 }

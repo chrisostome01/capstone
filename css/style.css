@@ -131,6 +131,7 @@ html{
     display: flex;
     align-items: center;
     justify-content: center;
+    cursor: pointer;
 }
 .signup-btn:hover{  
     border: 1px solid var(--highlight); 
