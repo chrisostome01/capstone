@@ -211,6 +211,12 @@
         padding-right: 3.1rem ;
     }
 }
+@media screen and (min-width:1150px) {    
+    .r-card{
+        width: 290px;  
+        max-height: 712px;
+    }
+}
 
 /* Large Screen */
 @media screen and (min-width:1400px) and  (min-height:870px){
