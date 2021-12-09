@@ -59,53 +59,64 @@
         <!-- start:: Log in card -->
          <div class="card-container">
             <div class="form-container">
-                <form action="#" class="signup" method="post">
+                <form class="signup" id="sign-up-form">
                     <div class="form-header">
                         <p>Signup</p>
                     </div>
-                    <div class="form-fields">
-                        <label for="Fullname">Fullname</label>
-                        <div class="input-field ">                            
-                            <input type="text" placeholder="Fullname" name="" id="Fullname">
-                            <div class="icon">
-                                <svg width="21" height="31" viewBox="0 0 21 31" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M5.5 7.60526C5.5 11.5226 7.74333 14.7105 10.5 14.7105C13.2567 14.7105 15.5 11.5226 15.5 7.60526C15.5 3.68789 13.2567 0.5 10.5 0.5C7.74333 0.5 5.5 3.68789 5.5 7.60526ZM19.3889 30.5H20.5V28.9211C20.5 22.8279 17.01 17.8684 12.7222 17.8684H8.27778C3.98889 17.8684 0.5 22.8279 0.5 28.9211V30.5H19.3889Z" fill="white"/>
-                                </svg>                                    
+                    <div class="form-fields">                        
+                        <div id="full-name-input" >
+                            <label for="Fullname">Fullname</label>
+                            <div class="input-field ">                            
+                                <input type="text" placeholder="Fullname" name="" id="Fullname">
+                                <div class="icon">
+                                    <svg width="21" height="31" viewBox="0 0 21 31" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M5.5 7.60526C5.5 11.5226 7.74333 14.7105 10.5 14.7105C13.2567 14.7105 15.5 11.5226 15.5 7.60526C15.5 3.68789 13.2567 0.5 10.5 0.5C7.74333 0.5 5.5 3.68789 5.5 7.60526ZM19.3889 30.5H20.5V28.9211C20.5 22.8279 17.01 17.8684 12.7222 17.8684H8.27778C3.98889 17.8684 0.5 22.8279 0.5 28.9211V30.5H19.3889Z" fill="white"/>
+                                    </svg>                                    
+                                </div>
                             </div>
+                            <div id="msg"></div>
+                        </div>                        
+                        <div id="email-input" >
+                            <label for="Email">Email</label>
+                            <div class="input-field ">                            
+                                <input type="email" placeholder="Email" name="" id="Email">
+                                <div class="icon">
+                                    <svg width="21" height="31" viewBox="0 0 21 31" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M5.5 7.60526C5.5 11.5226 7.74333 14.7105 10.5 14.7105C13.2567 14.7105 15.5 11.5226 15.5 7.60526C15.5 3.68789 13.2567 0.5 10.5 0.5C7.74333 0.5 5.5 3.68789 5.5 7.60526ZM19.3889 30.5H20.5V28.9211C20.5 22.8279 17.01 17.8684 12.7222 17.8684H8.27778C3.98889 17.8684 0.5 22.8279 0.5 28.9211V30.5H19.3889Z" fill="white"/>
+                                    </svg>                                    
+                                </div>                           
+                            </div>   
+                            <div id="msg"></div>
                         </div>
-                        <label for="Email">Email</label>
-                        <div class="input-field error">                            
-                            <input type="email" placeholder="Email" name="" id="Email">
-                            <div class="icon">
-                                <svg width="21" height="31" viewBox="0 0 21 31" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M5.5 7.60526C5.5 11.5226 7.74333 14.7105 10.5 14.7105C13.2567 14.7105 15.5 11.5226 15.5 7.60526C15.5 3.68789 13.2567 0.5 10.5 0.5C7.74333 0.5 5.5 3.68789 5.5 7.60526ZM19.3889 30.5H20.5V28.9211C20.5 22.8279 17.01 17.8684 12.7222 17.8684H8.27778C3.98889 17.8684 0.5 22.8279 0.5 28.9211V30.5H19.3889Z" fill="white"/>
-                                </svg>                                    
-                            </div>
-                            <div id="error-msg">Invalid email</div>
-                        </div>   
-                        <label for="username">Username</label>
-                        <div class="input-field ">                            
-                            <input type="text" placeholder="Username" name="" id="username">
-                            <div class="icon">
-                                <svg width="21" height="31" viewBox="0 0 21 31" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M5.5 7.60526C5.5 11.5226 7.74333 14.7105 10.5 14.7105C13.2567 14.7105 15.5 11.5226 15.5 7.60526C15.5 3.68789 13.2567 0.5 10.5 0.5C7.74333 0.5 5.5 3.68789 5.5 7.60526ZM19.3889 30.5H20.5V28.9211C20.5 22.8279 17.01 17.8684 12.7222 17.8684H8.27778C3.98889 17.8684 0.5 22.8279 0.5 28.9211V30.5H19.3889Z" fill="white"/>
-                                </svg>                                    
-                            </div>
-                        </div> 
-                        <label for="Password">Password</label>
-                        <div class="input-field ">                          
-                            <input type="password" placeholder="Password" name="" id="password">
-                            <div class="icon">
-                                <svg width="19" height="27" viewBox="0 0 19 27" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M15.75 9.125H17.8333C18.1096 9.125 18.3746 9.2567 18.5699 9.49112C18.7653 9.72554 18.875 10.0435 18.875 10.375V25.375C18.875 25.7065 18.7653 26.0245 18.5699 26.2589C18.3746 26.4933 18.1096 26.625 17.8333 26.625H1.16667C0.890399 26.625 0.625447 26.4933 0.430097 26.2589C0.234747 26.0245 0.125 25.7065 0.125 25.375V10.375C0.125 10.0435 0.234747 9.72554 0.430097 9.49112C0.625447 9.2567 0.890399 9.125 1.16667 9.125H3.25V7.875C3.25 5.88588 3.90848 3.97822 5.08058 2.5717C6.25269 1.16518 7.8424 0.375 9.5 0.375C11.1576 0.375 12.7473 1.16518 13.9194 2.5717C15.0915 3.97822 15.75 5.88588 15.75 7.875V9.125ZM2.20833 11.625V24.125H16.7917V11.625H2.20833ZM8.45833 16.625H10.5417V19.125H8.45833V16.625ZM4.29167 16.625H6.375V19.125H4.29167V16.625ZM12.625 16.625H14.7083V19.125H12.625V16.625ZM13.6667 9.125V7.875C13.6667 6.54892 13.2277 5.27715 12.4463 4.33947C11.6649 3.40178 10.6051 2.875 9.5 2.875C8.39493 2.875 7.33512 3.40178 6.55372 4.33947C5.77232 5.27715 5.33333 6.54892 5.33333 7.875V9.125H13.6667Z" fill="white"/>
-                                </svg>                                    
-                            </div>
+                        <div id="username-input">
+                            <label for="username">Username</label>
+                            <div class="input-field ">                            
+                                <input type="text" placeholder="Username" name="" id="username">
+                                <div class="icon">
+                                    <svg width="21" height="31" viewBox="0 0 21 31" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M5.5 7.60526C5.5 11.5226 7.74333 14.7105 10.5 14.7105C13.2567 14.7105 15.5 11.5226 15.5 7.60526C15.5 3.68789 13.2567 0.5 10.5 0.5C7.74333 0.5 5.5 3.68789 5.5 7.60526ZM19.3889 30.5H20.5V28.9211C20.5 22.8279 17.01 17.8684 12.7222 17.8684H8.27778C3.98889 17.8684 0.5 22.8279 0.5 28.9211V30.5H19.3889Z" fill="white"/>
+                                    </svg>                                    
+                                </div>
+                            </div> 
+                            <div id="msg"></div>
                         </div>
+                        <div id="password-input">
+                            <label for="Password">Password</label>
+                            <div class="input-field ">                          
+                                <input type="password" placeholder="Password" name="" id="password">
+                                <div class="icon">
+                                    <svg width="19" height="27" viewBox="0 0 19 27" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M15.75 9.125H17.8333C18.1096 9.125 18.3746 9.2567 18.5699 9.49112C18.7653 9.72554 18.875 10.0435 18.875 10.375V25.375C18.875 25.7065 18.7653 26.0245 18.5699 26.2589C18.3746 26.4933 18.1096 26.625 17.8333 26.625H1.16667C0.890399 26.625 0.625447 26.4933 0.430097 26.2589C0.234747 26.0245 0.125 25.7065 0.125 25.375V10.375C0.125 10.0435 0.234747 9.72554 0.430097 9.49112C0.625447 9.2567 0.890399 9.125 1.16667 9.125H3.25V7.875C3.25 5.88588 3.90848 3.97822 5.08058 2.5717C6.25269 1.16518 7.8424 0.375 9.5 0.375C11.1576 0.375 12.7473 1.16518 13.9194 2.5717C15.0915 3.97822 15.75 5.88588 15.75 7.875V9.125ZM2.20833 11.625V24.125H16.7917V11.625H2.20833ZM8.45833 16.625H10.5417V19.125H8.45833V16.625ZM4.29167 16.625H6.375V19.125H4.29167V16.625ZM12.625 16.625H14.7083V19.125H12.625V16.625ZM13.6667 9.125V7.875C13.6667 6.54892 13.2277 5.27715 12.4463 4.33947C11.6649 3.40178 10.6051 2.875 9.5 2.875C8.39493 2.875 7.33512 3.40178 6.55372 4.33947C5.77232 5.27715 5.33333 6.54892 5.33333 7.875V9.125H13.6667Z" fill="white"/>
+                                    </svg>                                    
+                                </div>
+                            </div>
+                            <div id="msg"></div>
+                        </div>                        
                         <p class="form-link" >
                             <a href="./login.html">Already have an account!</a>
                         </p> 
                         <div class="input-field">                          
-                            <button type="submit" >Login</button>
+                            <button type="submit" id="create-account" >Create account</button>
                         </div>                               
                     </div>                                                                
                 </form>
@@ -198,7 +209,7 @@
                         <form action="#" method="post">
                             <div class="form-fields">
                                 <div class="input-field">
-                                    <input type="email" placeholder="Email" name="" id="email">
+                                    <input type="email" placeholder="Email" name="" id="contact-email">
                                 </div>
                                 <div class="input-field">
                                     <input type="text" placeholder="Subject" name="" id="subject">
@@ -223,7 +234,7 @@
                     <form action="#" method="post">
                         <div class="form-fields">
                             <div class="input-field sub">
-                                <input type="email" placeholder="Email" name="" id="email">
+                                <input type="email" placeholder="Email" name="" id="sub-email">
                                 <button>
                                     <svg width="23" height="20" viewBox="0 0 23 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                                         <path d="M22.3742 2.49808L19.0734 18.0645C18.8244 19.1631 18.175 19.4366 17.2521 18.919L12.2228 15.2129L9.79608 17.5469C9.52752 17.8155 9.30291 18.0401 8.78534 18.0401L9.14666 12.918L18.468 4.49515C18.8732 4.13382 18.3801 3.93362 17.8381 4.29495L6.31463 11.5508L1.35369 9.99808C0.274593 9.66116 0.255062 8.91897 1.5783 8.4014L20.9826 0.92581C21.881 0.588896 22.6672 1.12601 22.3742 2.49808Z" fill="white"/>
