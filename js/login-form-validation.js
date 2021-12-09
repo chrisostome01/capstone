@@ -51,15 +51,15 @@ const validatUsername = () => {
     }
 }
 const validatPassword = () => {
-    let password = document.getElementById(`password`).value.trim();
+    let password = document.getElementById(`password`).value;
     document.getElementById(`password`).addEventListener('keyup',() => {
-        let password = document.getElementById(`password`).value.trim();
+        let password = document.getElementById(`password`).value;
        
         let errorStatus = {
             msg:'',
             pass: false
         }
-        if(password == ''){
+        if(password.trim() == ''){
             showMsg('password-input' ,'Please fill this field','error');
         }   
         else if((password.trim().length < 8)){
@@ -73,7 +73,7 @@ const validatPassword = () => {
         msg:'',
         pass: false
     }
-    if(password == ''){
+    if(password.trim() == ''){
         showMsg('password-input' ,'Please fill this field','error');
     }   
     else if((password.trim().length < 8)){
