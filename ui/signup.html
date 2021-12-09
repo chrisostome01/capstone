@@ -74,13 +74,14 @@
                             </div>
                         </div>
                         <label for="Email">Email</label>
-                        <div class="input-field ">                            
+                        <div class="input-field error">                            
                             <input type="email" placeholder="Email" name="" id="Email">
                             <div class="icon">
                                 <svg width="21" height="31" viewBox="0 0 21 31" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <path d="M5.5 7.60526C5.5 11.5226 7.74333 14.7105 10.5 14.7105C13.2567 14.7105 15.5 11.5226 15.5 7.60526C15.5 3.68789 13.2567 0.5 10.5 0.5C7.74333 0.5 5.5 3.68789 5.5 7.60526ZM19.3889 30.5H20.5V28.9211C20.5 22.8279 17.01 17.8684 12.7222 17.8684H8.27778C3.98889 17.8684 0.5 22.8279 0.5 28.9211V30.5H19.3889Z" fill="white"/>
                                 </svg>                                    
                             </div>
+                            <div id="error-msg">Invalid email</div>
                         </div>   
                         <label for="username">Username</label>
                         <div class="input-field ">                            
@@ -254,6 +255,7 @@
      <!-- ====================== End:: contents =========================== -->
     </div>        
     <script src="../js/script.js"></script>
+    <script src="../js/validate-signup.js"></script>
     <!-- ================================== End:: content wrapper ================================== -->
 </body>
 </html>
