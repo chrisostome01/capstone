@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&family=Poppins:wght@400;500;600;700;800&family=Roboto:wght@400;500;700;900&display=swap');
 *{
     padding: 0;
     margin: 0;
@@ -11,24 +12,22 @@ html{
 }
 .card-container{
     position: relative !important;
-    height: 100% !important;
-    width: 100% !important;
+    height: 100vh !important;
 }
 .form-container{  
-    position: absolute;
-    top: 50%;
+    /* position: relative; */
+    /* top: 50%;
     right: 50%;
-    transform: translate(50%,-50%);
-    min-width: 200px;
-    background: rgba(255, 255, 255, 1);
-    border-radius: 10px;
-    box-shadow: 4px 3px 4px 2px rgba(0, 0, 0, 0.14);
+    transform: translate(50%,-50%); */
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;  
+    margin: auto;
+    box-sizing: border-box;
 }
 .login .form-header{    
     height: 100px;
-    min-width: 100%;
-    left: 339px;
-    top: 252px;
+    min-width: 100%;   
     color: var(--highlight);
     background-color: var(--main);
     display: flex;
@@ -37,6 +36,10 @@ html{
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
   
+}
+.login{
+    margin: auto;
+    background: rgba(255, 255, 255, 1);
 }
 .login .form-header p {
     font-family: 'Roboto',sans-serif;
@@ -64,6 +67,7 @@ form.login input{
 .login label{
     color: rgba(32, 32, 32, 0.624);
     font-family: 'Poppins' ,sans-serif;
+    font-weight: 500;
 }
 .login .input-field button{
     margin-top: 12px;
@@ -111,8 +115,10 @@ form.login input{
     align-items: center;
     border-top-right-radius: 5px ;
     border-bottom-right-radius: 5px ;
-    box-shadow: 3px 4px 4px 2px rgba(0, 0, 0, 0.17);
+    box-shadow: 1px 2px 4px 2px rgba(0, 0, 0, 0.268);
     height: 44px;
+    padding: 0;
+    margin: 0;
 }
 .icon svg{
     width:18px ;
@@ -121,7 +127,14 @@ form.login input{
  .login input{
     border-top-right-radius:0px !important;
     border-bottom-right-radius:0px !important;
+    box-shadow: 0px 2px 4px 2px rgba(0, 0, 0, 0.17) !important;
+    color: #0e5394a9; 
+    font-family: 'Poppins' ,sans-serif;
+    font-weight: 500;
+    font-size: 14px;
+    padding: 1rem 0rem 1rem 1rem;
 }
+
 
 
 /* resposniveness  */
@@ -138,4 +151,53 @@ form.login input{
         font-size: 30px;
         line-height: 47px;
     }
+    .login .input-field{
+        margin-bottom: 9px;       
+    }
+    .footer-section{
+        margin-top: 8rem;
+    }
+    .form-container{
+        margin-top: 3rem;
+    }
 }
+
+/* start:: Validation css */
+#msg{
+    display: block;
+    padding-bottom: 0px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+    font-size: 13px;
+    opacity: 0;
+    margin: 0px;
+}
+.input-field input{
+    transition: 0.2s all ease-in-out;
+}
+.input-field #msg{
+    transition: 0.2s all ease-in-out;
+}
+/* .error input{
+    box-shadow: 0px 1px 4px 2px rgba(243, 6, 6, 0.37) !important;
+}
+.success input{
+    box-shadow: 0px 1px 4px 2px rgba(7, 122, 7, 0.542) !important;
+} */
+.error .icon{
+    box-shadow: 0px 2px 4px 3px rgba(243, 6, 6, 0.438) !important;
+}
+.success .icon{
+    box-shadow: 0px 1px 4px 2px rgba(7, 122, 7, 0.542) !important;
+}
+.error #msg{    
+    color: rgba(255, 0, 0, 0.624);
+    opacity: 1 !important;
+    padding-bottom: 10px !important;
+}
+.success #msg{
+   color: rgb(18, 219, 18);
+   opacity: 1 !important;
+   padding-bottom: 10px !important;
+}
+/* End:: validation css */
