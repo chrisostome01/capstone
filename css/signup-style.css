@@ -135,6 +135,9 @@ form.signup input{
     padding: 1rem 0rem 1rem 1rem;
 }
 
+.footer-section{
+    margin-top: 8rem;
+}
 
 
 /* resposniveness  */
@@ -155,7 +158,7 @@ form.signup input{
         margin-bottom: 9px;       
     }
     .footer-section{
-        margin-top: 8rem;
+        margin-top: 0rem;
     }
     .form-container{
         margin-top: 3rem;
