@@ -50,10 +50,11 @@ const validateFullName = () => {
 const validateEmail = () => {
     let email = document.getElementById(`Email`).value.trim();
     let indexOfAt = email.indexOf('@');
+    var isValid = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email);
     document.getElementById(`Email`).addEventListener('keyup',() => {
         let email = document.getElementById(`Email`).value.trim();
         let indexOfAt = email.indexOf('@');
-       
+        isValid = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email);
         let errorStatus = {
             msg:'',
             pass: false
@@ -63,10 +64,9 @@ const validateEmail = () => {
         }
         else if(!(email.includes('@'))){
             showMsg('email-input' ,'Please email shoud have @','error');
-            console.log('Please email shoud have @');
-        }    
-        else if(indexOfAt < 2){
-            showMsg('email-input' ,'Please email has to be valid','error');
+        }  
+        else if(!isValid){
+            showMsg('email-input' ,'Please email is not valid','error');
         }
         else{
             showMsg('email-input' ,'Success','success');
@@ -81,9 +81,9 @@ const validateEmail = () => {
     }
     else if(!(email.includes('@'))){
         showMsg('email-input' ,'Please email shoud have @','error');
-    }     
-    else if(indexOfAt < 2){
-        showMsg('email-input' ,'Please email has to be valid','error');
+    } 
+    else if(!isValid){
+        showMsg('email-input' ,'Please email is not valid','error');
     }
     else{
         showMsg('email-input' ,'Success','success');
