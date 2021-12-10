@@ -140,7 +140,7 @@ form.login input{
 /* resposniveness  */
 @media screen and (min-width: 600px ) {
     form.login{
-        width: 400px;
+        width: 500px;
         display: block;
         border-radius: 10px;
     }
