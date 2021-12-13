@@ -13,23 +13,21 @@ html{
 .card-container{
     position: relative !important;
     height: 100vh !important;
-    width: 100% !important;
 }
 .form-container{  
-    position: absolute;
-    top: 50%;
+    /* position: relative; */
+    /* top: 50%;
     right: 50%;
-    transform: translate(50%,-50%);
-    min-width: 200px;
-    background: rgba(255, 255, 255, 1);
-    border-radius: 10px;
-    box-shadow: 4px 3px 4px 2px rgba(0, 0, 0, 0.14);
+    transform: translate(50%,-50%); */
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;  
+    margin: auto;
+    box-sizing: border-box;
 }
 .login .form-header{    
     height: 100px;
-    min-width: 100%;
-    left: 339px;
-    top: 252px;
+    min-width: 100%;   
     color: var(--highlight);
     background-color: var(--main);
     display: flex;
@@ -38,6 +36,10 @@ html{
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
   
+}
+.login{
+    margin: auto;
+    background: rgba(255, 255, 255, 1);
 }
 .login .form-header p {
     font-family: 'Roboto',sans-serif;
