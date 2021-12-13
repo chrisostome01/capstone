@@ -27,15 +27,22 @@ html{
 }
 .signup .form-header{    
     height: 100px;
-    min-width: 100%;   
+    width: 100% !important;
+}
+.form-container{     
+    background: rgba(255, 255, 255, 1);
+    border-radius: 10px;
+    box-shadow: 4px 3px 4px 2px rgba(0, 0, 0, 0.14);
+}
+.signup .form-header{    
+   
     color: var(--highlight);
     background-color: var(--main);
     display: flex;
     justify-content: center;
     align-items: center;
     border-top-left-radius: 10px;
-    border-top-right-radius: 10px;
-  
+    border-top-right-radius: 10px;  
 }
 .signup{
     margin: auto;
@@ -134,7 +141,6 @@ form.signup input{
     font-size: 14px;
     padding: 1rem 0rem 1rem 1rem;
 }
-
 .footer-section{
     margin-top: 8rem;
 }
@@ -143,7 +149,7 @@ form.signup input{
 /* resposniveness  */
 @media screen and (min-width: 600px ) {
     form.signup{
-        width: 400px;
+        width: 500px;
         display: block;
         border-radius: 10px;
     }
