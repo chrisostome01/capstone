@@ -25,51 +25,57 @@ html{
     margin: auto;
     box-sizing: border-box;
 }
-.login .form-header{    
+.signup .form-header{    
     height: 100px;
-    min-width: 100%;   
+    width: 100% !important;
+}
+.form-container{
+    border-radius: 10px;
+    box-shadow: 4px 3px 4px 2px rgba(0, 0, 0, 0.14);
+}
+.signup .form-header{    
+   
     color: var(--highlight);
     background-color: var(--main);
     display: flex;
     justify-content: center;
     align-items: center;
     border-top-left-radius: 10px;
-    border-top-right-radius: 10px;
-  
+    border-top-right-radius: 10px;  
 }
-.login{
+.signup{
     margin: auto;
     background: rgba(255, 255, 255, 1);
 }
-.login .form-header p {
+.signup .form-header p {
     font-family: 'Roboto',sans-serif;
     font-style: normal;
     font-weight: bold;
     font-size: 25px;
     line-height: 47px;
 }
-.login .input-field{
+.signup .input-field{
     margin-bottom: 12px;
     display: flex;
     justify-content: center;  
 }
-form.login{
+form.signup{
     width: 280px;
     display: block;
     border-radius: 10px;
 }
-form.login input{
+form.signup input{
     width: 85% !important;
 }
-.login .form-fields{
+.signup .form-fields{
     padding: 2rem;
 }
-.login label{
+.signup label{
     color: rgba(32, 32, 32, 0.624);
     font-family: 'Poppins' ,sans-serif;
     font-weight: 500;
 }
-.login .input-field button{
+.signup .input-field button{
     margin-top: 12px;
     width: 100%;   
     height: 44px;
@@ -83,7 +89,7 @@ form.login input{
     cursor: pointer;
     transition: 0.1s ease-in-out;
 }
-.login .input-field button:hover{   
+.signup .input-field button:hover{   
     color: rgb(255, 255, 255);    
 }
 .active-btn{
@@ -124,7 +130,7 @@ form.login input{
     width:18px ;
     height: 26px;
 }
- .login input{
+ .signup input{
     border-top-right-radius:0px !important;
     border-bottom-right-radius:0px !important;
     box-shadow: 0px 2px 4px 2px rgba(0, 0, 0, 0.17) !important;
@@ -134,28 +140,30 @@ form.login input{
     font-size: 14px;
     padding: 1rem 0rem 1rem 1rem;
 }
-
+.footer-section{
+    margin-top: 8rem;
+}
 
 
 /* resposniveness  */
 @media screen and (min-width: 600px ) {
-    form.login{
+    form.signup{
         width: 500px;
         display: block;
         border-radius: 10px;
     }
-    .login .form-header p {
+    .signup .form-header p {
         font-family: 'Roboto',sans-serif;
         font-style: normal;
         font-weight: bold;
         font-size: 30px;
         line-height: 47px;
     }
-    .login .input-field{
+    .signup .input-field{
         margin-bottom: 9px;       
     }
     .footer-section{
-        margin-top: 8rem;
+        margin-top: 0rem;
     }
     .form-container{
         margin-top: 3rem;
