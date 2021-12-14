@@ -734,6 +734,18 @@ form textarea{
 }
 /* End footer */
 
+.title.c-padding{
+  padding: 20px;
+}
+.footer-body{
+  padding:20px;
+}
+.footer-body .contact-me{
+  max-width: 350px;
+}
+.body-container{
+  padding: 22px;
+}
 /* ============ End::body content  ========= */
 
 /* responsiveness for reuseble component */
