@@ -81,6 +81,7 @@ html{
     position: absolute;
     right: 0px;
     height: 100vh;
+    width: 60%;
     top: 6vh;
     background-color: var(--main);
     display: none;
@@ -105,7 +106,7 @@ html{
     color:var(--underline);
     text-decoration: none;
     font-family: 'Roboto', sans-serif;
-    font-size: 10px;
+    font-size: 12px;
 }
 .active-link{
     color: var(--highlight) !important;
