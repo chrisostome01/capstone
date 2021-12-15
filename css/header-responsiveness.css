@@ -5,6 +5,12 @@
     .nav{
         width: 75%;
     }
+    .oscreen{
+        display: flex;
+    }
+    .mob{
+        display: none;
+    }
     .nav ul{
         display: flex;
         flex-direction: row;
@@ -37,7 +43,7 @@
 /* laptop */
 @media screen and (min-width:1024px) {    
     .nav ul li a{
-        font-size: 15px;
+        font-size: 12px;
     }
     .log{
         width: 30% ;
@@ -51,6 +57,9 @@
     .c-padding{
         padding-left:200px;
         padding-right:200px;
+    }
+    .nav ul li a{
+        font-size: 16px;
     }
 }    
 
