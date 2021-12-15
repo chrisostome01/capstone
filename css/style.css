@@ -84,6 +84,7 @@ html{
     right: 0px;
     height: 100vh;
     top: 6vh;
+    width: 60%;
     background-color: var(--main);
     display: none;
     flex-direction: column;
@@ -107,7 +108,7 @@ html{
     color:var(--underline);
     text-decoration: none;
     font-family: 'Roboto', sans-serif;
-    font-size: 10px;
+    font-size: 12px;
 }
 .active-link{
     color: var(--highlight) !important;
@@ -827,4 +828,17 @@ form textarea{
   margin-top: 6px;
   font-size: 12px; 
   font-family: 'Poppins', sans-serif;
+}
+
+.title.c-padding{
+  padding: 20px;
+}
+.footer-body{
+  padding:20px;
+}
+.footer-body .contact-me{
+  max-width: 350px;
+}
+.body-container{
+  padding: 22px;
 }
