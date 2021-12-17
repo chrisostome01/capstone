@@ -55,7 +55,7 @@ const displayBlog = (inter = null) => {
     var BlogTable = database.ref('Blogs').orderByChild('dateCreated').limitToFirst(limit);
     const removeNotification = showNotification(`!`,'Fetching blogs','success','noEnd');
     var htmlString = '';
-   
+    bloglist.innerHTML = '';
     BlogTable.once('value', (snapshot) => {
         const data = snapshot.val();
         if (snapshot.exists()) {
@@ -145,7 +145,7 @@ blogForm.addEventListener('submit',(sub) => {
 const fetchBlogs = () => {
     var BlogTable = database.ref('Blogs').orderByChild('dateCreated').limitToFirst(interval);
     var htmlString = '';
-   
+    bloglist.innerHTML = '';
     BlogTable.once('value', (snapshot) => {
         const data = snapshot.val();
         if (snapshot.exists()) {
