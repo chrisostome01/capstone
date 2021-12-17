@@ -6,16 +6,23 @@
         width: 75%;
     }
     .nav ul{
-        display: flex;
+        display: flex !important;
         flex-direction: row;
         align-items: center;
         top: 0;
         align-items: center;
         height: 100%;
+        min-width: 100%;
         position: relative;
         justify-content: space-between;
         transform: translateX(0%);
     }
+   .log {
+       max-width: 20%;
+   }
+   .log h2{
+       font-size: 30px;
+   }
     .nav ul li a{
         font-size: 12px;
     }

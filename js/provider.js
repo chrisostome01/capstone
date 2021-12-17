@@ -8,19 +8,33 @@ const showMsg = (id ,errorMsg ,status ) =>{
         place.classList.toggle(`${status}`) ;
     } ,2000);
 }
-const showNotification = (title = '',msg = '',errorType = '' ) =>{
+const showNotification = (title = '',msg = '',errorType = '' , lastIn = null) =>{
   
     let place = document.getElementById(`notification`);
     let msgTitleField = place.querySelector(`#error-title`);
     let notInfo = place.querySelector(`#not-info`);
     msgTitleField.innerHTML =  title;
-    notInfo.innerHTML = msg;
+    notInfo.innerHTML = msg  ;
     place.classList.add(`${errorType}-msg`);
-    setTimeout(() => {
-        msgTitleField != null ?  msgTitleField.innerHTML = '': '' ;
-        notInfo != null ?  notInfo.innerHTML = '': '' ;
-        place.classList.remove(`${errorType}-msg`);
-    } ,4000);
+    if(lastIn == null){        
+        setTimeout(() => {
+            msgTitleField != null ?  msgTitleField.innerHTML = '': '' ;
+            notInfo != null ?  notInfo.innerHTML = '': '' ;
+            place.classList.remove(`${errorType}-msg`);
+        } ,4000);
+    }
+    else{
+        // setTimeout(() => {
+        //     msgTitleField != null ?  msgTitleField.innerHTML = '': '' ;
+        //     notInfo != null ?  notInfo.innerHTML = '': '' ;
+        //     place.classList.remove(`${errorType}-msg`);
+        // } ,lastIn);
+        return () => {
+            msgTitleField != null ?  msgTitleField.innerHTML = '': '' ;
+            notInfo != null ?  notInfo.innerHTML = '': '' ;
+            place.classList.remove(`${errorType}-msg`);
+        }
+    }
 }
 const hideElement = (id) =>{
     let place = document.getElementById(`${id}`);
@@ -271,5 +285,11 @@ const isEmpty = (elementId , comment) => {
         errorStatus.pass = true;
     }
     return errorStatus;
+} 
+/* =============== end:: validating subject and comment====================== */
+/* =============== validating subject and comment ====================== */
+const fillin = (elementId , comment) => {
+    let place = document.getElementById(`${elementId}`);
+    place != null ? place.innerHTML = comment : ''; 
 } 
 /* =============== end:: validating subject and comment====================== */

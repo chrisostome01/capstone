@@ -1,34 +1,42 @@
+logout();
 login.addEventListener('submit',(e)=>{
+   
     e.preventDefault();
-    showPassword();
-    logout();
+    showPassword();  
     let email = document.getElementById('Email').value; 
-    let password = document.getElementById('password').value;
+    let password = document.getElementById('password').value;    
     if(isLoginInputValid.emailIsValid && isLoginInputValid.passwordIsValid){
+        const removeNotification = showNotification(`!`,'Fetching your account information','success','noEnd');
+        var userInfo = {};
+       
         auth.signInWithEmailAndPassword(email,password)
         .then(Credentials => {
-            console.log( 'user return',Credentials);
-            
-            var userInfo = {
-                userEmail : email,
-                userName:'',
-                fullName:'',
-                profile: Credentials.user.photoURL
-            };
             userTable.once("value", snap => {
+                removeNotification();
                 let userRecord = snap.val();
-                console.log('returned record' , userRecord);
+                // console.log('returned record' , userRecord);
                 /* keeping user info in localstorage */ 
-                userInfo.Username;
-                userInfo.FullName;
+                for(var i in userRecord){
+                    console.log(userRecord[i]);
+                    if(userRecord[i].Email == email ){
+                        localStorage.setItem("userInfo",JSON.stringify(userRecord[i]));
+                        location.href  = './browse.html';
+                    }
+                }
             })
-            localStorage.setItem("userInfo",JSON.stringify(userInfo));
+            
             login.reset();
-            location.href  = './browse.html';
+            
         })
         .catch(error => {
-            showMsg('password-input',error.code.split('/')[1],'error')           
+            removeNotification();
+            showNotification(`!`,error.code.split('/')[1].replace('-',' '),'error');       
+            login.reset();   
         })     
+    }
+    else{
+        showNotification(`!`,'Please make sure all field are not empty','error');     
+        login.reset();
     }
   
 })

@@ -1,7 +1,4 @@
-
-// https://firebase.google.com/docs/web/setup#available-libraries
-
-/* Database configuration */
+//setting up firebase
 const firebaseConfig = {
     apiKey: "AIzaSyDyhJPX5hGXmkVCjWiDYDgxW8Ongh0YZqU",
     authDomain: "capstone-d17ab.firebaseapp.com",
@@ -11,23 +8,20 @@ const firebaseConfig = {
     appId: "1:658315154433:web:ee6855874b6ed722da1c00",
     databaseURL:"https://capstone-d17ab-default-rtdb.europe-west1.firebasedatabase.app"
 };
-
 /* Initialize Database  */
 const app = firebase.initializeApp(firebaseConfig);
 const database = app.database();
 const auth = firebase.auth();
-const userTable = database.ref('users');
-const googleProvider = new firebase.auth.GoogleAuthProvider();
+var userInfo = JSON.parse(localStorage.getItem('userInfo'));
 
-// loggin out
-const logout = () => {   
-    localStorage.clear();
-    auth.signOut()
-    .then(() => {
-        console.log('Succefuly signed out');
-    })
-    .catch((error)=>{
-        console.log(error);
-    })
+//var blogId = JSON.parse(localStorage.getItem('blogId'));
+console.log(userInfo);
+
+const getBog = (blogId = null ) => {
+    var query =database.ref('Blogs').orderByChild('id').limitToFirst(1).equalTo(blogId);
+    query.once("value", function(snapshot) {
+        console.log(snapshot.val());
+        snapshot.forEach(function(child) {
+        })
+    })   
 }
-

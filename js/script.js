@@ -17,3 +17,28 @@ contactForm.addEventListener('submit',(e) => {
         contactForm.reset();
     }   
 })
+
+//model close and open
+let close = document.getElementById('close');
+if(close != null){
+    let showBlogCreatModel = document.getElementById('showBlogCreatModel');
+    close.addEventListener('click',() => {
+        document.getElementById('blog-model').classList.remove('blog-active');
+    })
+    showBlogCreatModel.addEventListener('click',() => {
+        document.getElementById('blog-model').classList.toggle('blog-active');
+    })
+}
+/* ================ Remove and Add element ================ */
+const removeThisElement = (elementId) =>{
+    document.getElementById(`${elementId}`).classList.add('hidden');
+}
+const setContent = (elementId,data) => {
+    document.getElementById(`${elementId}`).innerHTML = data;
+}
+const setImage = (elementId,imageUrl) => {
+    document.getElementById(`${elementId}`).src = imageUrl;
+}
+const addThisElement = (elementId) =>{
+    document.getElementById(`${elementId}`).classList.remove('hidden');
+}
