@@ -4,6 +4,7 @@
     margin: 0;
     box-sizing: border-box;
 }
+/* hsl(202,92%,85%) */
 body{
     position: relative;
 }
@@ -12,7 +13,6 @@ html{
 }
 .card-container{
     position: relative !important;
-    height: 100vh !important;
 }
 .form-container{  
     /* position: relative; */
@@ -40,6 +40,7 @@ html{
 .login{
     margin: auto;
     background: rgba(255, 255, 255, 1);
+    box-shadow: 2px 3px 10px 5px rgba(0, 0, 0, 0.118);
 }
 .login .form-header p {
     font-family: 'Roboto',sans-serif;
@@ -54,7 +55,7 @@ html{
     justify-content: center;  
 }
 form.login{
-    width: 280px;
+    width: 95%;
     display: block;
     border-radius: 10px;
 }
@@ -62,7 +63,7 @@ form.login input{
     width: 85% !important;
 }
 .login .form-fields{
-    padding: 2rem;
+    padding: 1rem;
 }
 .login label{
     color: rgba(32, 32, 32, 0.624);
@@ -136,6 +137,26 @@ form.login input{
 }
 
 
+#continue-social button span {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#continue-social button img{
+  max-width: 20px;
+  height: 30px;
+}
+
+#continue-social button#with-g{
+    border: 1px solid rgba(255, 193, 7, 1);
+    background-color: transparent;
+    transition: all 0.1s ease-in-out;
+}
+#continue-social button:hover#with-g{
+    background-color: rgba(255, 193, 7, 0.733);
+    transition: all 0.1s ease-in-out;
+}
 
 /* resposniveness  */
 @media screen and (min-width: 600px ) {
@@ -160,6 +181,17 @@ form.login input{
     .form-container{
         margin-top: 3rem;
     }
+    .login .form-fields{
+        padding: 2rem;
+    }
+}
+@media screen and (min-width: 900px ) {
+    form.login{
+        width: 400px;
+        display: block;
+        border-radius: 10px;
+    }
+   
 }
 
 /* start:: Validation css */
