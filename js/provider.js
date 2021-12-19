@@ -36,6 +36,12 @@ const showNotification = (title = '',msg = '',errorType = '' , lastIn = null) =>
         }
     }
 }
+function ellpsIt(info , upto) {
+    if (info.length > upto) {
+       return info.substring(0, upto) + '...';
+    }
+    return info;
+ };
 const hideElement = (id) =>{
     let place = document.getElementById(`${id}`);
     place.classList.add('hidden');
@@ -266,7 +272,7 @@ const validateContactEmail = (elementId) => {
     }
     return errorStatus;
 }
-/* ============= end validating email ====================== */ 
+/* ============= end validating email ============================ */ 
 /* =============== validating subject and comment ====================== */
 const isEmpty = (elementId , comment) => {
     let email = document.getElementById(`${elementId}`).value.trim();    
@@ -287,9 +293,37 @@ const isEmpty = (elementId , comment) => {
     return errorStatus;
 } 
 /* =============== end:: validating subject and comment====================== */
-/* =============== validating subject and comment ====================== */
+/* =============== validating subject and comment =========================== */
 const fillin = (elementId , comment) => {
     let place = document.getElementById(`${elementId}`);
     place != null ? place.innerHTML = comment : ''; 
 } 
 /* =============== end:: validating subject and comment====================== */
+
+/* =============== Start:: Element customisation ================================= */ 
+const elementLeader = () => {
+    if(userInfo == null){
+        const postCard = document.getElementById('postCard') ;
+        postCard != null ? postCard.remove() : '' ;
+        
+    }
+    else{
+        if(userInfo.userType != 'admin'){
+            const showBlogFormButton = document.getElementById('showBlogCreatModel') ;
+            showBlogFormButton != null ? showBlogFormButton.remove() : '' ;
+        }
+    }
+    
+    // Getting profile
+    if(userInfo != null){
+        if(userInfo.profile != null){
+            setImage('profile',userInfo.photoURL);
+        }
+        addThisElement('profile-image');
+        fillin('username',userInfo.Fullname);
+    }
+    else{
+        removeThisElement('profile-image');
+    }
+}
+/* =============== End:: Element customisation ================================= */ 

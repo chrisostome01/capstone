@@ -57,7 +57,7 @@
                             <button class="login-btn"  onclick="location.href='./login.html'">Login</button>
                         </li>
                         <li>
-                            <button class="signup-btn" onclick="location.href='./signup.html'">>Signup</button>
+                            <button class="signup-btn" onclick="location.href='./signup.html'">Signup</button>
                         </li>
                     </ul>
                 </div>
@@ -83,12 +83,12 @@
             </div>
             <div class="cbody shodow-none content-padding">
                 <div class="set"> 
-                    <div class="r-card post-card">
+                    <div class="r-card post-card" id="postCard" >
                         <div class="user-profile " id="profile-image">
                             <img src="../images/L8tWZT4CcVQ.jpg" id="profile" alt="sezerano">
                         </div>  
                         <div class="comment-field">
-                            <p> Hello <span id="username">..........</span>! you can click plus button to add a new blog</p>
+                            <p> Hello <span id="username">..</span>! Hope you had a great day </p>
                         </div>    
                         <div class="add-button" id="showBlogCreatModel" >                           
                             <img src="../assets/svgs/add.svg" alt="" srcset="">
@@ -266,9 +266,13 @@
                     <div class="input-field">
                           <input type="text" name="" id="Subtitle" placeholder="How.... ?" >
                     </div>
+                    <label for="subtitle">Banner</label>
+                    <div class="input-field">
+                          <input type="file" name="" id="image" placeholder="Banner" >
+                    </div>
                     <label for="information">Description</label>
-                    <div class="input-field blogDesc">
-                        <input type="text" name="" id="blog-info" placeholder="Description" >
+                    <div class="blogDesc">
+                        <textarea id="blog-info" >Start your blog information here</textarea>
                     </div>
                     
                     <div class="input-field">
@@ -285,7 +289,8 @@
     <script src="../js/script.js"></script>
     <script defer src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
     <script defer src="https://www.gstatic.com/firebasejs/8.10.0/firebase-database.js"></script>
-    <script defer src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+    <script defer src="https://www.gstatic.com/firebasejs/8.10.0/firebase-storage.js"></script>
+    <script src="https://cdn.tiny.cloud/1/amc19cpts81ware34ga7t46rggr1p3cliy55cw81wyw5v36y/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
     <script defer src="../server/browseElementLead.js"></script>
 </body>
 </html>

@@ -42,3 +42,5 @@ const setImage = (elementId,imageUrl) => {
 const addThisElement = (elementId) =>{
     document.getElementById(`${elementId}`).classList.remove('hidden');
 }
+//Getting user information
+const userInfo = JSON.parse(localStorage.getItem('userInfo'));

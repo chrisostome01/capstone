@@ -61,6 +61,12 @@
     border-radius: 10px;
     overflow:hidden ;
     box-shadow: 0 1px 15px rgb(27, 31, 35 , 15%), 0 0 1px rgb(106 ,115, 125 , 35%);
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+}
+.blog-card:hover{
+    background-color: rgb(230, 227, 227);
+    box-shadow: 0 1px 15px rgba(27, 31, 35, 0.356), 0 0 1px rgba(106, 115, 125, 0.493);
 }
 .next-card{
     width: 20%;
@@ -86,13 +92,15 @@
     padding: 0;
     margin: 0;
     width: 30%;
-    height: 100%;
-    background-image: url("../images/19-jun-18-twitter-blog-eng.png");
+    height: 100%;   
     background-repeat: no-repeat;
     background-size: cover;
     object-position: center;
 }
-
+.blog-summary-content .blog-image-banner img{ 
+    max-width: 100%;
+    min-height: 100%;
+}
 .blog-summary-content .blog-content-s{
     padding: 4px 5px 4px 5px;
     margin: 0;
@@ -163,6 +171,12 @@
 .underline{
     width: auto;
 }
+.blog-read-body{
+    padding: 7px;
+}
+.blog-read-header{
+    padding: 7px;
+}
 .blog-read-body .sub-title{
     font-size: 13px;
 }
@@ -170,6 +184,9 @@
     font-size: 13px;
     margin-top: 6px;    
     color:rgba(10, 10, 10, 0.651);
+    margin-top: 1rem;
+    max-width: 100%;
+    overflow-x: auto;
 }
 .blog-read-body .list li{   
     margin: 5px 0px 5px 0px;

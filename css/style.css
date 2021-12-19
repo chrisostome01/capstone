@@ -84,7 +84,7 @@ html{
     position: absolute;
     right: 0px;
     height: 100vh;
-    top: 6vh;
+    top: 8vh;
     width: 60%;
     background-color: var(--main);
     display: none;
@@ -824,7 +824,7 @@ form textarea{
   box-shadow: 0 0 12px #181717a4;  
   position: fixed;
   top:5%;
-  right:-100%;
+  right:-160%;
   color: var(--main);
   cursor: pointer;
   transition: all 0.1s ease-in-out;
@@ -928,21 +928,25 @@ form textarea{
 }
 .new-blog{
   position:fixed;
-  height: 600px;
+  max-height: 670px;
+  overflow-y:auto ;
   background-color: white;
   top: 200%;
   right: 50%;
   transform: translate(50%,-50%);
   border-radius: 10px;
   box-shadow: 0 0 12px #181717a4;  
-  width: 85%;
+  width: 95%;
   transition: 0.1s all ease-in-out;
   opacity: 0;
-visibility: hidden;
+  visibility: hidden;
+}
+.new-blog .blogDesc textarea{
+  height: 0px !important;
 }
 .new-blog.blog-active{
   opacity: 1;
-  top: 70%;
+  top: 65%;
   visibility: visible;
 }
 .new-blog h3{
@@ -967,15 +971,7 @@ visibility: hidden;
   background-color: rgb(255, 255, 255);
   margin-bottom: 5px;
 }
-.new-blog .blogDesc input{
-  height: 90px;
-  font-size: 12px;
-  box-shadow: 0 0 5px #181717a4;  
-  font-family: 'Poppins', sans-serif;
-  font-weight: 400;
-  background-color: rgb(255, 255, 255);
 
-}
 input{
   transition: 0.1s all ease-in-out;
   outline: none;
@@ -1037,12 +1033,15 @@ input:focus {
   justify-content: space-between;
   align-items: center;
 }
+.top-image img{
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
 /* resposniveness */
 
 @media screen and (min-width: 400px) {
   .new-blog{  
-    width: 60%;  
-    left:2%;
+    width: 80%;  
   }
   
 }
@@ -1076,7 +1075,7 @@ input:focus {
 
 @media screen and (min-width: 1400px) {
   .new-blog{  
-    width: 20%;  
-    left:55%;
+    width: 30%;  
+    left:45%;
   }
 }
