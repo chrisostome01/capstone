@@ -25,9 +25,12 @@ if(close != null){
     close.addEventListener('click',() => {
         document.getElementById('blog-model').classList.remove('blog-active');
     })
-    showBlogCreatModel.addEventListener('click',() => {
-        document.getElementById('blog-model').classList.toggle('blog-active');
-    })
+    showBlogCreatModel != null ? 
+        showBlogCreatModel.addEventListener('click',() => {
+            document.getElementById('blog-model').classList.toggle('blog-active');
+        })
+    : '' ;
+    
 }
 /* ================ Remove and Add element ================ */
 const removeThisElement = (elementId) =>{
@@ -44,3 +47,8 @@ const addThisElement = (elementId) =>{
 }
 //Getting user information
 const userInfo = JSON.parse(localStorage.getItem('userInfo'));
+/* =========== Setting blog to read ================== */
+const readThisBlog = (blogId) => {
+    localStorage.setItem("blogId",blogId);
+    location.href = './blog.html';
+}

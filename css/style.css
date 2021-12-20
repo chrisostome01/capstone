@@ -941,6 +941,15 @@ form textarea{
   opacity: 0;
   visibility: hidden;
 }
+.update-u{
+  min-height: 670px;
+  overflow-y:auto ;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 0 12px #181717a4;  
+  width: 95%;
+  transition: 0.1s all ease-in-out;
+}
 .new-blog .blogDesc textarea{
   height: 0px !important;
 }

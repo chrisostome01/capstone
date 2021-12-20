@@ -24,7 +24,7 @@ folder.addEventListener('click',() =>{
     blogSide.classList.toggle('folded');
     blogReadingSide.classList.toggle('unfolded');
 })
-/* ===================== End:: Folding blog function ============================ */
+/* ===================== End:: Folding blog function ============================= */
 /* == Start::removing useful elemnt if user is not logged in */
 elementLeader();
 /* == End:: removing useful elemnt if user is not logged in */
