@@ -955,7 +955,7 @@ form textarea{
 }
 .new-blog.blog-active{
   opacity: 1;
-  top: 65%;
+  top: 55%;
   visibility: visible;
 }
 .new-blog h3{
