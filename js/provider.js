@@ -24,11 +24,6 @@ const showNotification = (title = '',msg = '',errorType = '' , lastIn = null) =>
         } ,4000);
     }
     else{
-        // setTimeout(() => {
-        //     msgTitleField != null ?  msgTitleField.innerHTML = '': '' ;
-        //     notInfo != null ?  notInfo.innerHTML = '': '' ;
-        //     place.classList.remove(`${errorType}-msg`);
-        // } ,lastIn);
         return () => {
             msgTitleField != null ?  msgTitleField.innerHTML = '': '' ;
             notInfo != null ?  notInfo.innerHTML = '': '' ;

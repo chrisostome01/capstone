@@ -93,9 +93,10 @@ blogForm.addEventListener('submit' , (e) => {
                               .catch(error => {
                                   console.log(error);
                               })
-                        })
+                        });
+                        readThisBlog(blogId);
                     })  
-                    // readThisBlog(blogId);
+                    
                });
             } 
          );
@@ -104,25 +105,32 @@ blogForm.addEventListener('submit' , (e) => {
 
 
 /*  ====================== Start:: Getting selected blog information =======================*/
+
+var content = '';
 const gettingSelectBogData = (blogIdSent) => {
     var BlogTable = database.ref('Blogs');
     const query = BlogTable.orderByChild('id').limitToFirst(1).equalTo(blogIdSent);
     var title = document.getElementById('title');
     var Subtitle = document.getElementById('Subtitle'); 
-    var textArea = document.getElementById('blog-info'); 
-    textArea.innerHTML = 'Hello';
-    var content = '';
+    var textArea = document.getElementById('blog-info');    
+    const blogTitle = document.getElementById("blogTitle");
+
     query.once("value", function(snapshot) {
         var data = snapshot.val();       
         for(var i in data){
             // var textArea = blogForm.querySelector('#blog-info');
-            
+            blogTitle.innerHTML = data[i].Title;
             title.value = data[i].Title;
             Subtitle.value = data[i].Subtitle;  
-            tinymce.get('blog-info').setContent(data[i].info); 
+            content = data[i].info ;
+            
         }
     }) ;
    
 }
 gettingSelectBogData(blogId);
+window.addEventListener('load',() => {
+ 
+    tinymce.get('blog-info').setContent(content); 
+})
 /*  ====================== End:: Getting selected blog information =======================*/ 
