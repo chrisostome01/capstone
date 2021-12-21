@@ -40,7 +40,9 @@ const setContent = (elementId,data) => {
     document.getElementById(`${elementId}`).innerHTML = data;
 }
 const setImage = (elementId,imageUrl) => {
-    document.getElementById(`${elementId}`).src = imageUrl;
+    document.getElementById(`${elementId}`) != null ?
+        document.getElementById(`${elementId}`).src = imageUrl 
+    : '' ;
 }
 const addThisElement = (elementId) =>{
     document.getElementById(`${elementId}`).classList.remove('hidden');

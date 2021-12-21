@@ -40,10 +40,8 @@ const gettingSelectBogData = (blogIdSent) => {
     var blogReadingSide = document.getElementById('blog-reading-side');
     var htmlInfo = '';
     query.on("value", function(snapshot) {
-        var data = snapshot.val();
-        console.log(data);
-        for(var i in data){
-            console.log(data[i].Title);
+        var data = snapshot.val();   
+        for(var i in data){           
             htmlInfo += `
             <div class="top-banner">
                 <img src="${data[i].postBanner}" alt="" srcset="">

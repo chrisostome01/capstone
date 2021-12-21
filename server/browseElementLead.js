@@ -91,6 +91,7 @@ const displayBlog = (inter = null) => {
         else{
             showNotification(`!`,'No blogs found','error');
         }
+        removeNotification();
     });
 }
 displayBlog();
@@ -219,6 +220,7 @@ const fetchBlogs = () => {
         else{
             showNotification(`!`,'No blogs found','success');
         }
+        removeNotification();
     });
 }
 

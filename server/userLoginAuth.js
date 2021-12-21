@@ -52,15 +52,14 @@ logInGoogle.addEventListener('click',()=>{
             var credential = result.credential;
             var token = credential.accessToken;
         } 
-        let isNewUserNot = result.additionalUserInfo.isNewUser;
-        if( !isNewUserNot ){ 
-            /* ==== Getting user Info ====== */ 
+        let isNotNewUser = result.additionalUserInfo.isNewUser;
+        if( !isNotNewUser ){ 
+            /* ==== Start:: Getting user Info ====== */ 
             var user = result.user;
-            /* ==== Getting user Info ====== */  
+            /* ==== End:: Getting user Info ====== */  
              /* ==========Start:: Updating user profile ========= */
             const query = userTable.orderByChild('Email').limitToFirst(1).equalTo(user.email);   
             query.once('value' , (snap) => { 
-                console.log('user found and then update',snap);
                 snap.forEach((child) => { 
                     child.ref.update({
                         'profile' : user.photoURL,
@@ -78,7 +77,6 @@ logInGoogle.addEventListener('click',()=>{
                 
                 /* ==== start:: keeping user info in localstorage ==== */ 
                 for(var i in userRecord){
-                    console.log(userRecord[i]);
                     if(userRecord[i].Email == user.email){
                         localStorage.setItem("userInfo",JSON.stringify(userRecord[i]));
                         location.href  = './browse.html';
