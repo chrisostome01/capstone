@@ -312,7 +312,7 @@ const elementLeader = () => {
     // Getting profile
     if(userInfo != null){
         if(userInfo.profile != null){
-            setImage('profile',userInfo.photoURL);
+            setImage('profile',userInfo.profile);
         }
         addThisElement('profile-image');
         fillin('username',userInfo.Fullname);

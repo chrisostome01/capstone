@@ -10,6 +10,7 @@ createAccount.addEventListener('submit',(e) =>{
         });
         
         if(isSignupInputValid.emailIsValid && isSignupInputValid.passwordIsValid && isSignupInputValid.userNameIsValid && isSignupInputValid.fullNameIsValid){
+            const removeNotification = showNotification(`!`,'Proccesing information','success','noEnd');
             let email = document.getElementById('Email').value;
             let password = document.getElementById('password').value;
             let fullname = document.getElementById('Fullname').value;
@@ -20,6 +21,7 @@ createAccount.addEventListener('submit',(e) =>{
                 const isNewEmail = userCredential.additionalUserInfo.isNewUser; 
                 const id = userTable.push().key;
                 console.log(user);
+                removeNotification();
                 if(isNewEmail){
                     userTable.child(user.uid).set({
                         'id' :  user.uid ,
@@ -36,7 +38,6 @@ createAccount.addEventListener('submit',(e) =>{
                     var userInfo = { };
                     userTable.once("value", snap => {
                         let userRecord = snap.val();
-                        // console.log('returned record' , userRecord);
                         /* keeping user info in localstorage */ 
                         for(var i in userRecord){
                             console.log(userRecord[i]);
@@ -48,6 +49,9 @@ createAccount.addEventListener('submit',(e) =>{
                     })
                     
                     createAccount.reset();
+                }
+                else{
+                    showNotification(`!`,'You email is already sign up','success');
                 }
             }) 
             .catch((error) => {
@@ -84,7 +88,6 @@ createAccount.addEventListener('submit',(e) =>{
                     var userInfo = { };
                     userTable.once("value", snap => {
                         let userRecord = snap.val();
-                        // console.log('returned record' , userRecord);
                         /* keeping user info in localstorage */ 
                         for(var i in userRecord){
                             console.log(userRecord[i]);
@@ -107,5 +110,4 @@ createAccount.addEventListener('submit',(e) =>{
 const signUpGoogle = document.getElementById('with-g');
 signUpGoogle.addEventListener('click',()=>{
     hideFullForm();
-    // logout();
 });
