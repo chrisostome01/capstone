@@ -15,6 +15,8 @@ font-family: 'Roboto', sans-serif; */
     --error: rgba(255, 61, 0, 1);
     --success: rgba(76, 175, 80, 1);
     --mainH : #083f72;
+    --shadowColor: #181717c7;
+    --shadow: 0 0 12px #181717a4;
 }
 body{
     height: 100%;
@@ -187,7 +189,7 @@ html{
   align-items: center;  
   border : 1px solid var(--underline);
   border-radius: 100%;
-  box-shadow: 0 0 12px #181717a4;  
+  box-shadow: var(--shadow);  
   transition: all 0.2s ease-in-out;
   padding: 0px;
   margin-left: 5px;
@@ -203,7 +205,7 @@ html{
   height: 100%;
   border : none;
   border-radius: 100%;
-  box-shadow: 0 0 12px #181717c7;  
+  box-shadow: 0 0 12px var(--shadowColor);  
 }
 /* End:: navbar */
 
@@ -821,7 +823,7 @@ form textarea{
   min-width: 350px;
   min-height: 90px;
   z-index: 999999911;
-  box-shadow: 0 0 12px #181717a4;  
+  box-shadow: var(--shadow);  
   position: fixed;
   top:5%;
   right:-160%;
@@ -879,7 +881,7 @@ form textarea{
   align-items: center;
   justify-content: center;
   padding: 6px;
-  box-shadow: 0 0 12px #181717a4;  
+  box-shadow: var(--shadow);  
 }
 .post-card .comment-field{
    width: 60%;
@@ -903,7 +905,7 @@ form textarea{
   justify-self: center;
   padding: 10px;
   border-radius: 5px;
-  box-shadow: 0 0 12px #181717a4;  
+  box-shadow: var(--shadow);  
   cursor: pointer;
   transition: all 0.1s ease-in-out;
 }
@@ -911,7 +913,7 @@ form textarea{
   width: 20px;
 }
 .post-card .add-button:hover{
-  box-shadow: 0 0 12px #181717a4;  
+  box-shadow: var(--shadow);  
   background-color: var(--mainH);
 }
 .r-card.post-card{
@@ -935,18 +937,27 @@ form textarea{
   right: 50%;
   transform: translate(50%,-50%);
   border-radius: 10px;
-  box-shadow: 0 0 12px #181717a4;  
+  box-shadow: var(--shadow);  
   width: 95%;
   transition: 0.1s all ease-in-out;
   opacity: 0;
   visibility: hidden;
+}
+.update-u{
+  min-height: 670px;
+  overflow-y:auto ;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: var(--shadow);  
+  width: 95%;
+  transition: 0.1s all ease-in-out;
 }
 .new-blog .blogDesc textarea{
   height: 0px !important;
 }
 .new-blog.blog-active{
   opacity: 1;
-  top: 65%;
+  top: 55%;
   visibility: visible;
 }
 .new-blog h3{

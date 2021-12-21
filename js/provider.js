@@ -23,12 +23,7 @@ const showNotification = (title = '',msg = '',errorType = '' , lastIn = null) =>
             place.classList.remove(`${errorType}-msg`);
         } ,4000);
     }
-    else{
-        // setTimeout(() => {
-        //     msgTitleField != null ?  msgTitleField.innerHTML = '': '' ;
-        //     notInfo != null ?  notInfo.innerHTML = '': '' ;
-        //     place.classList.remove(`${errorType}-msg`);
-        // } ,lastIn);
+    else{       
         return () => {
             msgTitleField != null ?  msgTitleField.innerHTML = '': '' ;
             notInfo != null ?  notInfo.innerHTML = '': '' ;
