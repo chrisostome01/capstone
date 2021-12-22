@@ -101,5 +101,6 @@ logInGoogle.addEventListener('click',()=>{
         var errorCode = error.code;
         var errorMessage = error.message;
         console.log(error);
+        location.reload();
     });
 });

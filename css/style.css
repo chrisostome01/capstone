@@ -514,7 +514,7 @@ html{
     font-size: 20px;
   }
   .blog-section.top-image {
-    height: 114px;
+    height: 212px;
     width: 100%;
     left: 39px;
     top: 14px;
@@ -1044,7 +1044,10 @@ input:focus {
   justify-content: space-between;
   align-items: center;
 }
+
 .top-image img{
+  min-width: 100% !important;
+  min-height: 100% !important;
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
 }

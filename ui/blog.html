@@ -51,16 +51,16 @@
                                 <li>
                                     <a href="#">Contact</a>
                                 </li>
-                                <li>
+                                <li id="loginBtn">
                                     <button class="login-btn"  onclick="location.href='./login.html'">Login</button>
                                 </li>
-                                <li>
-                                    <button class="signup-btn" onclick="location.href='./signup.html'">>Signup</button>
+                                <li id="signUpBtn">
+                                    <button class="signup-btn"  onclick="location.href='./signup.html'">Signup</button>
                                 </li>
                             </ul>
                         </div>
                         <div class="user-profile hidden" id="profile-image">
-                            <img src="../images/L8tWZT4CcVQ.jpg" id="profile" alt="sezerano">
+                            <img src="../images/L8tWZT4CcVQ.jpg" id="profile"  onclick="location.href='./profile.html'" alt="sezerano">
                         </div>
                         <div class="reveal" id="bugger">
                             <div class="line1"></div>
@@ -91,7 +91,7 @@
                                     <form action="#" method="post">
                                         <div class="form-fields">
                                             <div class="input-field sub">
-                                                <input type="email" placeholder="search..." name="" id="email">
+                                                <input type="email" placeholder="search..." name="" id="search">
                                                 <span>
                                                     <img src="../assets/svgs/search.svg" alt="" srcset="">                                            
                                                 </span>
@@ -247,7 +247,7 @@
                         </div>
                     </div>
                 <!-- =================== End:: Blog card =============== -->
-                   <!-- ============= Start:: content Footer ========== -->
+                <!-- ================== Start:: content Footer ======== -->
                     <footer class="footer-section c-padding">
                         <div class="footer-brand">
                             <h2 class="highligh-f" >MY BRAND</h2>
@@ -386,15 +386,16 @@
                             </div>
                         </div>                
                     </footer>
-                   <!-- ================ End:: content Footer ========= -->
+                <!-- ===================== End:: content Footer ========= -->
             <!-- =================== End:: contents ==================== -->
         </div>        
     <!-- ======================= End:: content wrapper ======================= -->
-    <script src="../js/provider.js"></script>
-    <script src="../js/script.js"></script>
     <script defer src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
     <script defer src="https://www.gstatic.com/firebasejs/8.10.0/firebase-database.js"></script>
     <script defer src="https://www.gstatic.com/firebasejs/8.10.0/firebase-storage.js"></script>
+    <script defer src="../js/provider.js"></script>
+    <script defer src="../js/script.js"></script>
+  
     <script defer src="../js/blog.js"></script>
 </body>
 </html>

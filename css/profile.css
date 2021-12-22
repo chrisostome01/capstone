@@ -1,0 +1,26 @@
+#contacts-info .comment-field{
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: left !important;
+    align-items: center;
+}
+.label-and-value{
+    width: 70%;
+}
+.label-and-value.quot{
+    width: 75%;
+}
+.label-and-value label{
+    font-weight: 900;
+    font-size: 14px;
+}
+.label-and-value span{
+    font-size: 14px;
+}
+
+.comment-main{
+    width: 70%;
+}
+.add-button {
+    height: 40px !important;
+}

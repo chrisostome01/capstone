@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="../css/browse.css">
     <link rel="stylesheet" href="../css/header-responsiveness.css">
+    <link rel="stylesheet" href="../css/profile.css">
     <title>BLOGS</title>
 </head>
 <body>
@@ -73,12 +74,11 @@
           </header>
         <!--  End:: header-wrapper  -->
         <!--  Start:: contents  -->
-        <!-- start:: Blog card -->
-        <div class="card-container blog-section">
+        <!-- start:: Contact card -->
+        <div class="card-container blog-section" id="contacts" >
             <div class="title c-padding">
                 <div class="body-content-header">
-                    <h3 class="leon">Blogs</h3>
-                    <div class="Skills underline"></div>
+                    <h3 class="leon">Contacts</h3>
                 </div>
             </div>
             <div class="cbody shodow-none content-padding">
@@ -88,11 +88,8 @@
                             <img src="../images/L8tWZT4CcVQ.jpg" id="profile-p" alt="sezerano">
                         </div>  
                         <div class="comment-field">
-                            <p> Hello <span id="username">..</span>! Hope you had a great day </p>
-                        </div>    
-                        <div class="add-button" id="showBlogCreatModel" >                           
-                            <img src="../assets/svgs/add.svg" alt="" srcset="">
-                        </div>              
+                            <p> You are logged as <span id="username">..</span>! You can click <a href="./login.html">here</a> to logout</p>
+                        </div>          
                     </div>
                     <div class="body-container  set" id="blog-list">
                         
@@ -100,7 +97,45 @@
                 </div>                      
             </div>
         </div>
-        <!-- End:: Blog card  --> 
+        <!-- End:: Contact card  --> 
+
+         <!-- start:: Contact card -->
+         <div class="card-container blog-section" id="contacts-info" >            
+            <div class="cbody shodow-none content-padding">
+                <div class="set"> 
+                    <div class="r-card post-card" id="postCard" >
+                        <div class="user-profile " id="profile-image">
+                            <img src="../images/L8tWZT4CcVQ.jpg" id="profile-p" alt="sezerano">
+                        </div>  
+                        <div class="comment-field">
+                            <div class="label-and-value quot">
+                                <img src="../assets/svgs/quotes.svg"  alt="chrysostome" srcset="">
+                            </div>                            
+                            <div class="label-and-value">
+                                <label for="">Email :</label> <span>sezerano jean chrysostome</span>
+                            </div>
+                            <div class="label-and-value">
+                                <label for="">Subject :</label> <span>sezerano jean chrysostome</span>
+                            </div>
+                            <div class="label-and-value">
+                                <label for="">Comment :</label>
+                                 <span>  
+                                    said                                    
+                                    You can click to logout                                   
+                                </span>
+                            </div>
+                        </div>     
+                         <div class="add-button" id="showBlogCreatModel" >                           
+                            <img src="../assets/svgs/paper-plane.svg" alt="" srcset="">
+                        </div>     
+                    </div>
+                    <div class="body-container  set" id="blog-list">
+                        
+                    </div>
+                </div>                      
+            </div>
+        </div>
+        <!-- End:: Contact card  --> 
         <!-- ================== Start:: content Footer ======== -->
         <footer class="footer-section c-padding">
             <div class="footer-brand">
@@ -241,47 +276,7 @@
             </div>                
         </footer>
       <!-- ===================== End:: content Footer ========= -->
-        <!-- ================ Start:: Model ======================= -->
-        <div class="new-blog" id="blog-model">
-             <!-- overlay -->
-            <div class="new-blog-title">
-                <div class="title ">
-                   <h3 class="leon">Creating new  blog</h3>
-                </div>
-                <div class="title ">
-                   <div id="close">
-                        <svg width="11" height="10" viewBox="0 0 11 10" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M9.89214 0L5.5 3.99286L1.10786 0L0 1.00714L4.39214 5L0 8.99286L1.10786 10L5.5 6.00714L9.89214 10L11 8.99286L6.60786 5L11 1.00714L9.89214 0Z" fill="#0A69C1"/>
-                        </svg>                        
-                   </div>
-                 </div>
-            </div>
-            <div class="new-blog-body">
-                <form action="#" id="new-blog-form" method="post">
-                    <label for="topic">Topic</label>
-                    <div class="input-field">
-                        <input type="text" name="" id="title" placeholder="Topic">
-                    </div>
-                    <label for="subtitle">Sub-title</label>
-                    <div class="input-field">
-                          <input type="text" name="" id="Subtitle" placeholder="How.... ?" >
-                    </div>
-                    <label for="subtitle">Banner</label>
-                    <div class="input-field">
-                          <input type="file" name="" id="image" placeholder="Banner" >
-                    </div>
-                    <label for="information">Description</label>
-                    <div class="blogDesc">
-                        <textarea id="blog-info" >Start your blog information here</textarea>
-                    </div>
-                    
-                    <div class="input-field">
-                        <button type="submit" > Create </button>
-                    </div>
-                </form>
-            </div>
-        </div>
-        <!-- ================ End:: Model ========================= -->
+       
      <!--  End:: contents  -->
     </div>        
     <!-- ================================== End:: content wrapper ================================== -->
@@ -290,7 +285,6 @@
     <script defer src="https://www.gstatic.com/firebasejs/8.10.0/firebase-storage.js"></script>
     <script defer src="../js/provider.js"></script>
     <script defer src="../js/script.js"></script>
-    <script src="https://cdn.tiny.cloud/1/amc19cpts81ware34ga7t46rggr1p3cliy55cw81wyw5v36y/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
-    <script defer src="../server/browseElementLead.js"></script>
+    <script defer src="../server/profile.js"></script>
 </body>
 </html>
