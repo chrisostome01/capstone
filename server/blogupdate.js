@@ -25,11 +25,10 @@ elementLeader();
 
 
 // initializing tinmyce
-
 tinymce.init({
     selector: '#blog-info',
-    plugins: 'a11ychecker advcode casechange export formatpainter linkchecker autolink lists checklist pageembed permanentpen powerpaste table advtable tinycomments tinymcespellchecker',
-    toolbar: 'a11ycheck addcomment showcomments casechange checklist code export formatpainter  permanentpen table',
+    plugins: 'a11ychecker advcode casechange export formatpainter image linkchecker autolink lists checklist pageembed permanentpen powerpaste table advtable tinycomments tinymcespellchecker',
+    toolbar: 'a11ycheck addcomment showcomments casechange checklist image code export formatpainter  permanentpen table',
     toolbar_mode: 'floating',
     tinycomments_mode: 'embedded',
     mode : "specific_textareas",
@@ -64,6 +63,7 @@ blogForm.addEventListener('submit' , (e) => {
        let title = blogForm.querySelector('#title').value;
        let Subtitle = blogForm.querySelector('#Subtitle').value;
        let Information = tinymce.activeEditor.getContent();
+       const removeNotification =  showNotification(`!`,'Comment field should not be empty and it should be over 200 charactors','success','noEnd');
        uploadTask.on(
            "state_changed",
            function (snapshot) {
@@ -72,10 +72,11 @@ blogForm.addEventListener('submit' , (e) => {
            },
            function (error) {
                console.log(error.message);
-             },
-             function () {
-               uploadTask.snapshot.ref.getDownloadURL().then(function (downloadURL) {
-                   
+               removeNotification();
+               showNotification(`Techinical error!`,'Please try again ','error');
+            },
+            function () {
+               uploadTask.snapshot.ref.getDownloadURL().then(function (downloadURL) {                   
                     //Creating a blog 
                     blogForm.reset(); 
                     var query = database.ref('Blogs').orderByChild('id').limitToFirst(1).equalTo(blogId);
@@ -94,9 +95,10 @@ blogForm.addEventListener('submit' , (e) => {
                                   console.log(error);
                               })
                         });
+                        removeNotification();
+                        showNotification(`Techinical error!`,'Successfully updated','success');
                         readThisBlog(blogId);
-                    })  
-                    
+                    })
                });
             } 
          );
@@ -129,8 +131,7 @@ const gettingSelectBogData = (blogIdSent) => {
    
 }
 gettingSelectBogData(blogId);
-window.addEventListener('load',() => {
- 
+window.addEventListener('load',() => { 
     tinymce.get('blog-info').setContent(content); 
 })
 /*  ====================== End:: Getting selected blog information =======================*/ 

@@ -325,3 +325,13 @@ const elementLeader = () => {
     }
 }
 /* =============== End:: Element customisation ================================= */ 
+/* =============== Is it object functin =========================== */
+function isObject(val) {
+    return (typeof val === 'object');
+}
+/* =============== end:: Is it object functin====================== */
+/* =============== Is it object functin =========================== */
+function isUndifined(val) {
+    return (typeof val === 'undifined');
+}
+/* =============== end:: Is it object functin====================== */

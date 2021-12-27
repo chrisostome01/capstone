@@ -1,5 +1,5 @@
-if(userInfo == null){
-    location.href = './blog.html';
+if(!isObject(userInfo) || isUndifined(userInfo) ){
+    location.href = './login.html';
 }
 
 /* Database configuration */
@@ -22,7 +22,6 @@ const getContactInfo = (limitSent =  null) => {
     var limit = limitSent == null ? limitInterval : limitSent + limitInterval;
     const contactInfo = document.getElementById('contacts-info');
     var htmlInfo = '';
-    console.log(limit);
     let query = database.ref('contact').orderByChild('isNew').limitToLast(limit).equalTo(true);
     query.once('value', (snap) => {
         let data = snap.val();
@@ -59,7 +58,10 @@ const getContactInfo = (limitSent =  null) => {
                 </div>
                 `;
         } 
-        contactInfo.innerHTML = htmlInfo;
+        if(userInfo.userType == 'admin'){
+            contactInfo.innerHTML = htmlInfo;
+            document.getElementById('contact-label').classList.toggle('hidden');
+        }    
     });
 }
 
@@ -71,4 +73,59 @@ const replyTo = (contactId) => {
     console.log(contactId);
 } 
 
+const imageInput = document.getElementById('newImage');
+const imageToUpload = document.getElementById('imageToUpload');
+imageInput.addEventListener('change', function () {
+    var singleFile = imageInput.files[0];
+    var path = imageInput.value;
+    const reader = new FileReader();
+    reader.addEventListener('load', (event) => {
+        setImage('imageToUpload' ,  event.target.result)
+    });
+    reader.readAsDataURL(singleFile);
+  }, false);
 
+const saveProfile = document.getElementById('save-profile');
+
+saveProfile.addEventListener('click' , () => {    
+    const imageInput = document.getElementById('newImage');
+    const imageToUpload = document.getElementById('imageToUpload');
+    var singleFile = imageInput.files[0];
+    if(singleFile != null){
+        var image = imageInput.files[0];
+        var imageName = image.name;
+        let uniqueid = userInfo.id;
+        var storageRef = firebase.storage().ref("profile/"+uniqueid+"/"+ imageName);
+        var uploading = storageRef.put(image);
+        uploading.on('state_changed',
+        (snapshot)=> {
+            var progress = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
+            console.log("upload is " + progress + " done");
+        },
+        (error)=> {
+            showNotification(`Techinical error!`,'Please try again ','error');
+        },
+        ()=> {
+            uploading.snapshot.ref.getDownloadURL().then(function (downloadURL) {                   
+                //Creating a blog 
+                var query = database.ref('users').orderByChild('id').limitToFirst(1).equalTo(uniqueid);
+                query.once('value',(snap) => {
+                    snap.forEach(child => {
+                        child.ref.update({
+                            profile: downloadURL
+                        })
+                    });
+                    location.href = './login.html';
+                });
+           });
+        });
+    }
+    else{
+        showNotification(`!`,'Please make sure you have selected image','error');
+    }
+})
+
+ 
+window.addEventListener('load',() => {
+    setImage('imageToUpload',userInfo.profile);
+})

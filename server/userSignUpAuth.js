@@ -147,6 +147,7 @@ signUpGoogle.addEventListener('click',()=>{
                         'profile' : user.photoURL,
                         'parentId' : user.uid,
                         'userType' : 'normal',
+                        'updatedProfie': false ,
                         'longitude':longitudei,
                         'latitude':latitudei
                     });
@@ -159,7 +160,6 @@ signUpGoogle.addEventListener('click',()=>{
                     let userRecord = snap.val();                     
                     /* ==== start:: keeping user info in localstorage ==== */ 
                     for(var i in userRecord){
-                        console.log(userRecord[i]);
                         if(userRecord[i].Email == user.email){
                             localStorage.setItem("userInfo",JSON.stringify(userRecord[i]));
                             location.href  = './browse.html';
@@ -209,6 +209,7 @@ signUpGoogle.addEventListener('click',()=>{
                         'profile' : user.photoURL,
                         'parentId' : user.uid,
                         'userType' : 'normal',
+                        'updatedProfie': false ,
                         'longitude':longitudei,
                         'latitude':latitudei
                     });
