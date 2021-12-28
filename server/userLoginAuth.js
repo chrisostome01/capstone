@@ -48,16 +48,15 @@ logInGoogle.addEventListener('click',()=>{
     let email = document.getElementById('Email') ; 
     auth.signInWithPopup(googleProvider)
     .then((result) => {
+        const user = result.user;
         if (result.credential) {                    
             var credential = result.credential;
             var token = credential.accessToken;
         } 
         let isNotNewUser = result.additionalUserInfo.isNewUser;
         if( !isNotNewUser ){ 
-            /* ==== Start:: Getting user Info ====== */ 
-            var user = result.user;
             /* ==== End:: Getting user Info ====== */  
-             /* ==========Start:: Updating user profile ========= */
+            /* ==========Start:: Updating user profile ========= */
             const query = userTable.orderByChild('Email').limitToFirst(1).equalTo(user.email);   
             query.once('value' , (snap) => { 
                 snap.forEach((child) => { 
@@ -93,7 +92,44 @@ logInGoogle.addEventListener('click',()=>{
            
         }
         else{
-            showNotification('!','You have to sign up first', 'error');
+            var latitudei = 0000;
+            var longitudei = 0000;
+              //userNameCreation
+              const userNameCreator = () => {                        
+                  let uname = user.email;
+                  let newUsername = uname.split('@')[0];
+                  return newUsername;
+              } 
+              let userName = userNameCreator();
+              userTable.child(user.uid).set({
+                  'id' :  user.uid ,
+                  'Fullname' : user.displayName,
+                  'Email' : user.email,
+                  'Username' : userName,
+                  'emailIsVerified' : false,
+                  'profile' : user.photoURL,
+                  'parentId' : user.uid,
+                  'userType' : 'normal',
+                  'updatedProfie': false ,
+                  'longitude':longitudei,
+                  'latitude':latitudei
+              });
+          /* ==== End:: Getting user Info ====== */
+          /* ===== Start:: Setting Email ===== */
+              email.value = user.email;
+          /* ===== End:: Setting Email ======= */ 
+          const query = userTable.orderByChild('Email').limitToFirst(1).equalTo(user.email);   
+          query.once('value' , (snap) => { 
+              let userRecord = snap.val();                     
+              /* ==== start:: keeping user info in localstorage ==== */ 
+              for(var i in userRecord){
+                  if(userRecord[i].Email == user.email){
+                      localStorage.setItem("userInfo",JSON.stringify(userRecord[i]));
+                      location.href  = './browse.html';
+                  }
+              }
+              /* ==== End:: keeping user info in localstorage ==== */                   
+          }) 
         }
        
     })

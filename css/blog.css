@@ -458,3 +458,122 @@
     }
 }
 /*  ====== End:: Responsiviness ======  */
+
+/*  comment style */
+
+.hidden-comment{
+    opacity: 0;
+    width: 0%;
+    transition: all 1s ease-in-out;
+    position: absolute;
+}
+.comments-class{
+    background-color: white;
+    margin: 4px;
+    padding: 10px;
+    border-radius: 10px;
+    transition: all 0.4s ease-in-out;
+}
+.user-comment{
+    display: flex;   
+}
+.user-comment .user-profile{
+    width: 15%;
+    margin-right: 12px;
+}
+.user-comment .user-comment-info{
+    width: 85%;
+}
+.commenters-details{
+    margin-top: 9px;
+}
+.blog-reading-side .user-comment-info p {
+    font-weight: 600 !important;
+    font-size: 14px;
+}
+.comment-words{
+    font-weight: 400 !important;
+    color: rgb(116, 105, 116);
+    font-size: 12px;
+}
+.send-comment .send {
+    float: left;
+    display: flex;
+    justify-content: right;
+    margin: 0px;
+    width: 100%;
+}
+.comment-information{
+    max-height: 250px;
+    overflow: auto;
+}
+.postComment textarea{
+    box-shadow: 3px 4px 4px 2px rgba(0, 0, 0, 0.14);
+    width: 100%;
+    height: 90px;
+    left: 468px;
+    top: 197px;
+    text-align: center;
+    font-size: 17px;
+    background: #E1F1FA;
+    box-shadow: 3px 4px 4px 2px rgba(0, 0, 0, 0.14);
+    border-radius: 5px;
+    border:none;
+    outline: none;
+    align-items: center;
+}
+.comment-divider{
+    width: 100%;
+    height: 0px;
+    border: 2px solid rgba(0, 0, 0, 0.15);
+    margin-top: 9px;
+    margin-bottom: 9px;
+}
+
+.link{
+    color: var(--main);
+    cursor: pointer;
+
+}
+.link:hover{
+    color: steelblue;
+    
+    
+}
+/* commenting responsiveness */
+@media screen and (min-width:700px) {
+        
+    .comments-class{
+        box-shadow: var(--shadow);
+        width: 75%;
+        position: absolute;
+        z-index: 90;
+        right:0% ;
+        padding: 30px;
+    }
+    .user-comment .user-profile{
+        width: 10%;
+    }
+}
+@media screen and (min-width:900px) {
+        
+    .comments-class{
+        width: 65%;   
+        right:6% ;     
+    }
+}
+@media screen and (min-width:1024px) {
+        
+    .comments-class{
+        width: 55%;   
+        right:6% ;     
+        
+    }
+}
+@media screen and (min-width:1200px) {
+    .comments-class{
+        width: 600px;   
+        right:9% ;     
+        
+    }
+}

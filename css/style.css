@@ -795,8 +795,8 @@ form textarea{
 .hidden{
   visibility: hidden;
   width: 0%;
+  transition: all 0.1s ease-in-out;
 }
-
 /* ============ End::body content  ========= */
 
 /* responsiveness for reuseble component */
