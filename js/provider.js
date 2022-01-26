@@ -24,6 +24,7 @@ const showNotification = (title = '',msg = '',errorType = '' , lastIn = null) =>
         } ,4000);
     }
     else{
+
         return () => {
             msgTitleField != null ?  msgTitleField.innerHTML = '': '' ;
             notInfo != null ?  notInfo.innerHTML = '': '' ;
