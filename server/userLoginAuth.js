@@ -52,37 +52,45 @@ logInGoogle.addEventListener('click',()=>{
             var credential = result.credential;
             var token = credential.accessToken;
         } 
-        let isNewUserNot = result.additionalUserInfo.isNewUser;
-        if( !isNewUserNot ){ 
-             /* ==========Start:: Updating user profile === ===== */
-            const query = userTable.orderByChild('email').limitToFirst(1).equalTo(user.email);   
+        let isNotNewUser = result.additionalUserInfo.isNewUser;
+        if( !isNotNewUser ){ 
+            /* ==== Start:: Getting user Info ====== */ 
+            var user = result.user;
+            /* ==== End:: Getting user Info ====== */  
+             /* ==========Start:: Updating user profile ========= */
+            const query = userTable.orderByChild('Email').limitToFirst(1).equalTo(user.email);   
             query.once('value' , (snap) => { 
                 snap.forEach((child) => { 
                     child.ref.update({
-                        'profile' : user.photoURL
+                        'profile' : user.photoURL,
+                        'emailIsVerified':true
+                    })
+                    .then(() => {
+                        console.log('done');
+                    })  
+                    .catch(error => {
+                        console.log(error);
                     })
                 })
-            }) 
-            /* =========End:: Updating user profile =========== */  
-            /* ==== Getting user Info ====== */ 
-            var user = result.user;
-            /* ==== Getting user Info ====== */  
-            /* ===== Start:: Setting Email ========= */
-                email.value = user.email;
-            /* ===== End:: Setting Email ========= */ 
-            userTable.once("value", snap => {
-                removeNotification();
+               
                 let userRecord = snap.val(); 
+                
                 /* ==== start:: keeping user info in localstorage ==== */ 
                 for(var i in userRecord){
-                    console.log(userRecord[i]);
-                    if(userRecord[i].Email == user.email ){
+                    if(userRecord[i].Email == user.email){
                         localStorage.setItem("userInfo",JSON.stringify(userRecord[i]));
                         location.href  = './browse.html';
                     }
                 }
                 /* ==== End:: keeping user info in localstorage ==== */ 
-            })
+                removeNotification();
+            }) 
+            /* =========End:: Updating user profile =========== */  
+            
+            /* ===== Start:: Setting Email ========= */
+                email.value = user.email;
+            /* ===== End:: Setting Email ========= */ 
+           
         }
         else{
             showNotification('!','You have to sign up first', 'error');
@@ -93,6 +101,6 @@ logInGoogle.addEventListener('click',()=>{
         var errorCode = error.code;
         var errorMessage = error.message;
         console.log(error);
-        
+        location.reload();
     });
 });

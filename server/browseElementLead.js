@@ -23,8 +23,8 @@ var interval = 9;
 
 tinymce.init({
     selector: '#blog-info',
-    plugins: 'a11ychecker advcode casechange export formatpainter linkchecker autolink lists checklist pageembed permanentpen powerpaste table advtable tinycomments tinymcespellchecker',
-    toolbar: 'a11ycheck addcomment showcomments casechange checklist code export formatpainter  permanentpen table',
+    plugins: 'a11ychecker advcode casechange export formatpainter image  linkchecker autolink lists checklist pageembed permanentpen powerpaste table advtable tinycomments tinymcespellchecker',
+    toolbar: 'a11ycheck addcomment showcomments casechange checklist image code export formatpainter  permanentpen table',
     toolbar_mode: 'floating',
     tinycomments_mode: 'embedded',
   });
@@ -91,6 +91,7 @@ const displayBlog = (inter = null) => {
         else{
             showNotification(`!`,'No blogs found','error');
         }
+        removeNotification();
     });
 }
 displayBlog();
@@ -219,6 +220,7 @@ const fetchBlogs = () => {
         else{
             showNotification(`!`,'No blogs found','success');
         }
+        removeNotification();
     });
 }
 

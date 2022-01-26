@@ -236,9 +236,6 @@ const validatPassword = () => {
     }
     return errorStatus;
 }
-const showNo = () => {
-    
-} 
 /* =============  validating contact email ====================== */ 
 const validateContactEmail = (elementId) => {
     let email = document.getElementById(`${elementId}`).value.trim();
@@ -247,7 +244,8 @@ const validateContactEmail = (elementId) => {
     let errorStatus = {
         msg:'',
         pass: false,
-        errors:[]
+        errors:[],
+        value:''
     }   
     if(email == ''){
         showNotification('Email' ,'Please fill this field','error');
@@ -265,19 +263,21 @@ const validateContactEmail = (elementId) => {
         // showNotification('Email' ,'Success','success');
         errorStatus.errors = [];
         errorStatus.pass = true;
+        errorStatus.value = email;
     }
     return errorStatus;
 }
 /* ============= end validating email ============================ */ 
 /* =============== validating subject and comment ====================== */
 const isEmpty = (elementId , comment) => {
-    let email = document.getElementById(`${elementId}`).value.trim();    
+    let field = document.getElementById(`${elementId}`).value.trim();    
     let errorStatus = {
         msg:'',
         pass: false,
-        errors:[]
+        errors:[],
+        value:''
     }   
-    if(email == ''){
+    if(field == ''){
         showNotification(`${comment}`,'Please fill this field','error');
         errorStatus.errors = pushInError(errorStatus.errors,'Please fill this field');
     }   
@@ -285,6 +285,7 @@ const isEmpty = (elementId , comment) => {
         // showNotification(`${comment}` ,'Success','success');
         errorStatus.errors = [];
         errorStatus.pass = true;
+        errorStatus.value = field;
     }
     return errorStatus;
 } 
@@ -301,7 +302,6 @@ const elementLeader = () => {
     if(userInfo == null){
         const postCard = document.getElementById('postCard') ;
         postCard != null ? postCard.remove() : '' ;
-        
     }
     else{
         if(userInfo.userType != 'admin'){
@@ -313,13 +313,26 @@ const elementLeader = () => {
     // Getting profile
     if(userInfo != null){
         if(userInfo.profile != null){
-            setImage('profile',userInfo.photoURL);
+            setImage('profile',userInfo.profile);
+            setImage('profile-p',userInfo.profile);
         }
         addThisElement('profile-image');
         fillin('username',userInfo.Fullname);
+        removeThisElement('loginBtn');
+        removeThisElement('signUpBtn');
     }
     else{
         removeThisElement('profile-image');
     }
 }
 /* =============== End:: Element customisation ================================= */ 
+/* =============== Is it object functin =========================== */
+function isObject(val) {
+    return (typeof val === 'object');
+}
+/* =============== end:: Is it object functin====================== */
+/* =============== Is it object functin =========================== */
+function isUndifined(val) {
+    return (typeof val === 'undifined');
+}
+/* =============== end:: Is it object functin====================== */

@@ -13,7 +13,16 @@ contactForm.addEventListener('submit',(e) => {
     const isSubjectValid = isEmpty('subject','Subject');
     const isEmailValid = validateContactEmail('email');
     if(isEmailValid.pass && isSubjectValid.pass && isCommentValid.pass){
-        showNotification(`!`,'You form have been submited','success');
+        showNotification(`!`,'You form have been submited','success');     
+        const contactTable = database.ref('contact');
+        var uniqueId = contactTable.push().key;
+        contactTable.push().set({
+            id:uniqueId,
+            email:isEmailValid.value,
+            comment:isCommentValid.value,
+            subject:isSubjectValid.value,
+            isNew:true
+        })
         contactForm.reset();
     }   
 })
@@ -40,7 +49,9 @@ const setContent = (elementId,data) => {
     document.getElementById(`${elementId}`).innerHTML = data;
 }
 const setImage = (elementId,imageUrl) => {
-    document.getElementById(`${elementId}`).src = imageUrl;
+    document.getElementById(`${elementId}`) != null ?
+        document.getElementById(`${elementId}`).src = imageUrl 
+    : '' ;
 }
 const addThisElement = (elementId) =>{
     document.getElementById(`${elementId}`).classList.remove('hidden');
