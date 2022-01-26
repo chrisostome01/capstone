@@ -13,6 +13,18 @@
 <body>
     <!-- ======================= Start:: content wrapper ======================= -->
         <div class="content-wrapper">
+            <!-- ================ Start:: notification ========= -->
+            <div class="notification" id="notification">
+                <div class="nt-body">
+                    <div class="nt-title">
+                        <h3 id='error-title' >Sezerano</h3>
+                    </div>
+                    <div class="nt-info">
+                        <p id="not-info" >Email is required</p>
+                    </div>
+                </div>
+            </div>        
+            <!-- ================ End:: notification =========== -->
             <!-- ========== Start:: header-wrapper ================== -->
                 <header class="header-wrapper"> 
                     <div class="nav-header c-padding">
@@ -46,6 +58,9 @@
                                     <button class="signup-btn" onclick="location.href='./signup.html'">>Signup</button>
                                 </li>
                             </ul>
+                        </div>
+                        <div class="user-profile hidden" id="profile-image">
+                            <img src="../images/L8tWZT4CcVQ.jpg" id="profile" alt="sezerano">
                         </div>
                         <div class="reveal" id="bugger">
                             <div class="line1"></div>
@@ -88,185 +103,13 @@
                             <div class="body-container blog-set ">
                                 <!-- == Start::Bog side == -->
                                 <div class="blog-side" id="blog-side">
-                                    <div class="blog-card">
-                                        <div class="blog-summary-content">
-                                            <div class="blog-image-banner">
-                                            </div>
-                                            <div class="blog-content-s">
-                                                <h3 class="leon">Digital signature</h3>
-                                                <span class="sub-title">
-                                                    <p>
-                                                        How digital signature works?
-                                                    </p>
-                                                </span>
-                                                <div class="blog-info">
-                                                    <p>
-                                                        Word is changing very fast people are changing the
-                                                        way they usually works traditional signature are
-                                                        being suspened if can say it like that. digital 
-                                                        signature containts two main words which is 
-                                                        digital and siganture 
-                                                    </p>                                       
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="blog-card">
-                                        <div class="blog-summary-content">
-                                            <div class="blog-image-banner">
-                                            </div>
-                                            <div class="blog-content-s">
-                                                <h3 class="leon">Digital signature</h3>
-                                                <span class="sub-title">
-                                                    <p>
-                                                        How digital signature works
-                                                    </p>
-                                                </span>
-                                                <div class="blog-info">
-                                                    <p>
-                                                        Word is changing vary fast people are changing the
-                                                        way they usually works traditional signature are
-                                                        being suspened if can say it like that. digital 
-                                                        signature containts two main words which is 
-                                                        digital and siganture 
-                                                    </p>                                       
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="blog-card">
-                                        <div class="blog-summary-content">
-                                            <div class="blog-image-banner">
-                                            </div>
-                                            <div class="blog-content-s">
-                                                <h3 class="leon">Digital signature</h3>
-                                                <span class="sub-title">
-                                                    <p>
-                                                        How digital signature works
-                                                    </p>
-                                                </span>
-                                                <div class="blog-info">
-                                                    <p>
-                                                        Word is changing vary fast people are changing the
-                                                        way they usually works traditional signature are
-                                                        being suspened if can say it like that. digital 
-                                                        signature containts two main words which is 
-                                                        digital and siganture 
-                                                    </p>                                       
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="next-card">
-                                        <div class="icon-next">
-                                            <img src="../assets/svgs/next-icon.svg" alt="" srcset="">     
-                                        </div>
-                                    </div>      
-                                    <div class="next-card-w">
-                                        <div class="icon-next-w">
-                                            <img src="../assets/svgs/next-icon-w.svg" alt="" srcset="">     
-                                        </div>
-                                    </div>                               
+                                    
+                                                                  
                                 </div>
                                 <!-- == End::Bog side == -->
                                 <!-- === Start::blog-reading === -->
                                 <div class="blog-reading-side" id="blog-reading-side">
-                                    <div class="top-banner">
-                                        <img src="../images/19-jun-18-twitter-blog-eng.png" alt="" srcset="">
-                                    </div>
-                                    <div class="blog-text">
-                                        <div class="blog-read-header">
-                                            <h3 class="leon">Digital signature</h3>
-                                            <!-- <div class="underline"></div> -->
-                                        </div>
-                                        <div class="blog-read-body">
-                                            <span class="sub-title">
-                                                <p>
-                                                    How digital signature works?
-                                                </p>
-                                            </span>
-                                            <p class="discription">
-                                                Word is changing vary fast people are changing the
-                                                way they usually works traditional signature are
-                                                being suspened if can say it like that. digital 
-                                                signature containts two main words which is 
-                                                digital and siganture 
-                                            </p>   
-                                            <ul class="list">
-                                                <li>
-                                                    <span>
-                                                        Digital : (0,1) It is series of 0 and 1  presented
-                                                        to form meaningful information to machine
-                                                    </span>
-                                                </li>
-                                                <li>
-                                                    <span>
-                                                        Signature : It refer to hand written world
-                                                        or sketch that is used to approve information
-                                                        , in ancient period people used to sign on 
-                                                        papers to approve the authenticity means to
-                                                        make sure that the maker of a document is the
-                                                        true person  
-                                                    </span>
-                                                </li>
-                                            </ul>
-                                            <p class="discription">
-                                                A digital signature : Is a computer based technique 
-                                                used to validate the authenticity and integrity of a 
-                                                message, software or digital document. As the digital
-                                                equivalent of a handwritten signature or stamped seal, 
-                                                a digital signature offers far more inherent security, 
-                                                and it is intended to solve the problem of tampering and 
-                                                impersonation in digital communications. This all is 
-                                                combined to make digital document . in other word it is 
-                                                electronic verification of sender
-                                            </p>   
-                                        </div>
-                                    </div>
-                                    <div class="voting">
-                                        <div class="icons">
-                                            <div class="up-vote">
-                                                <div class="up-vote-icon">
-                                                    <img src="../assets/svgs/up-vote.svg" alt="" srcset="">                                                      
-                                                </div>
-                                                <div class="up-vote-counter">
-                                                    <span>
-                                                        12
-                                                    </span>
-                                                </div>
-                                            </div>
-                                            <div class="divider">
-                                                <svg width="2" height="36" viewBox="0 0 2 36" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                    <path d="M1 0V36" stroke="black" stroke-opacity="0.33" stroke-width="2"/>
-                                                </svg>                                                    
-                                            </div>
-                                            <div class="down-vote">
-                                                <div class="down-vote-icon">
-                                                    <img src="../assets/svgs/down-vote.svg" alt="">                                                                                                        
-                                                </div>
-                                                <div class="down-vote-counter">
-                                                    <span>
-                                                        12
-                                                    </span>
-                                                </div>
-                                            </div>
-                                            <div class="divider">
-                                                <svg width="2" height="36" viewBox="0 0 2 36" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                    <path d="M1 0V36" stroke="black" stroke-opacity="0.33" stroke-width="2"/>
-                                                </svg>                                                    
-                                            </div>
-                                            <div class="comment">
-                                                <div class="comment-icon">
-                                                   <img src="../assets/svgs/comment.svg" alt="" srcset="">                                                                                                             
-                                                </div>
-                                                <div class="comment-counter">
-                                                    <span>
-                                                        05
-                                                    </span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
+                                   
                                 </div>  
                                 <!-- ==== End::blog-reading ==== -->
                             </div> 
@@ -404,7 +247,7 @@
                         </div>
                     </div>
                 <!-- =================== End:: Blog card =============== -->
-                <!-- =========== Start:: content Footer ================ -->
+                   <!-- ============= Start:: content Footer ========== -->
                     <footer class="footer-section c-padding">
                         <div class="footer-brand">
                             <h2 class="highligh-f" >MY BRAND</h2>
@@ -427,7 +270,7 @@
                                         </span>
                                         <span>
                                             <p>
-                                                sezerano jean chrysostome
+                                            sezerano jean chrysostome
                                             </p>
                                         </span>
                                     </div>
@@ -439,14 +282,14 @@
                                         </span>
                                         <span>
                                             <p>
-                                                sezeranoJchrysostome
+                                            sezeranoJchrysostome
                                             </p>
                                         </span>
                                     </div>
                                     <div class="social">
                                         <span>
                                             <svg width="26" height="20" viewBox="0 0 26 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                            <path d="M22.6398 20H2.6075C1.94338 20 1.30647 19.7366 0.836872 19.2678C0.367273 18.7989 0.103455 18.163 0.103455 17.5V2.39125C0.131541 1.74724 0.407707 1.13895 0.874297 0.693376C1.34089 0.247804 1.96183 -0.000609048 2.6075 1.1214e-06H22.6398C23.304 1.1214e-06 23.9409 0.263393 24.4105 0.732234C24.8801 1.20107 25.1439 1.83696 25.1439 2.5V17.5C25.1439 18.163 24.8801 18.7989 24.4105 19.2678C23.9409 19.7366 23.304 20 22.6398 20ZM2.6075 4.835V17.5H22.6398V4.835L12.6237 11.5L2.6075 4.835ZM3.60911 2.5L12.6237 8.5L21.6382 2.5H3.60911Z" fill="white"/>
+                                                <path d="M22.6398 20H2.6075C1.94338 20 1.30647 19.7366 0.836872 19.2678C0.367273 18.7989 0.103455 18.163 0.103455 17.5V2.39125C0.131541 1.74724 0.407707 1.13895 0.874297 0.693376C1.34089 0.247804 1.96183 -0.000609048 2.6075 1.1214e-06H22.6398C23.304 1.1214e-06 23.9409 0.263393 24.4105 0.732234C24.8801 1.20107 25.1439 1.83696 25.1439 2.5V17.5C25.1439 18.163 24.8801 18.7989 24.4105 19.2678C23.9409 19.7366 23.304 20 22.6398 20ZM2.6075 4.835V17.5H22.6398V4.835L12.6237 11.5L2.6075 4.835ZM3.60911 2.5L12.6237 8.5L21.6382 2.5H3.60911Z" fill="white"/>
                                             </svg>                                        
                                         </span>
                                         <span>
@@ -475,19 +318,19 @@
                                         </span>
                                         <span>
                                             <p>
-                                            +250-789-154-432
+                                                +250-789-154-432
                                             </p>
                                         </span>
                                     </div>                        
                                 </div>
                             </div>
-                            <div class="contact-me">
+                            <div class="contact-me" id="contact-me">
                                 <div class="body-content-header">
                                     <h3 class="highligh-f">Contact me</h3>
                                     <div class="contact underline"></div>
                                 </div>
                                 <div class="contact-form">
-                                    <form action="#" method="post">
+                                    <form action="#" method="post" id="contact-form-field">
                                         <div class="form-fields">
                                             <div class="input-field">
                                                 <input type="email" placeholder="Email" name="" id="email">
@@ -498,9 +341,9 @@
                                             <div class="input-field">
                                                 <textarea name="comment" id="comment" placeholder="Comment" cols="30" rows="10"></textarea>
                                             </div>
-                                            <div class="input-field right">
+                                            <div class="input-field">
                                                 <div class="send">
-                                                    <button>Send</button>
+                                                    <button type="submit"  >Send</button>
                                                 </div>  
                                             </div>
                                         </div>                                                                
@@ -536,18 +379,22 @@
                                     </span>
                                     <span>
                                         <p>
-                                        KIGALI-NYARUGENGE
+                                            KIGALI-NYARUGENGE
                                         </p>
                                     </span>
                                 </div>                        
                             </div>
                         </div>                
                     </footer>
-                <!-- =========== End:: content Footer ================== -->
+                   <!-- ================ End:: content Footer ========= -->
             <!-- =================== End:: contents ==================== -->
         </div>        
     <!-- ======================= End:: content wrapper ======================= -->
+    <script src="../js/provider.js"></script>
     <script src="../js/script.js"></script>
-    <script src="../js/blog.js"></script>
+    <script defer src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+    <script defer src="https://www.gstatic.com/firebasejs/8.10.0/firebase-database.js"></script>
+    <script defer src="https://www.gstatic.com/firebasejs/8.10.0/firebase-storage.js"></script>
+    <script defer src="../js/blog.js"></script>
 </body>
 </html>

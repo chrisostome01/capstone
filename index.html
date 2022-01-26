@@ -11,6 +11,18 @@
 <body>
     <!-- ======= Start:: content wrapper =============================== -->
       <div class="content-wrapper">
+        <!-- ================ Start:: notification ========= -->
+        <div class="notification" id="notification">
+            <div class="nt-body">
+                <div class="nt-title">
+                    <h3 id='error-title' >Sezerano</h3>
+                </div>
+                <div class="nt-info">
+                    <p id="not-info" >Email is required</p>
+                </div>
+            </div>
+        </div>        
+        <!-- ================ End:: notification =========== -->
         <!-- ==== Start:: header-wrapper ==== -->
         <header class="header-wrapper">
             <div class="nav-header c-padding">
@@ -23,19 +35,19 @@
                             <a class="active-link" href="#">Home</a>
                         </li>
                         <li>
-                            <a href="#">About me</a>
+                            <a href="#about-me">About me</a>
                         </li>
                         <li>
-                            <a href="#">Skills</a>
+                            <a href="#my-skill">Skills</a>
                         </li>
                         <li>
                             <a href="./ui/browse.html">Blog</a>
                         </li>
                         <li>
-                            <a href="#">Project</a>
+                            <a href="#my-project">Project</a>
                         </li>
                         <li>
-                            <a href="#">Contact</a>
+                            <a href="#contact-me" id="contact">Contact</a>
                         </li>
                         <li>
                             <button class="login-btn"  onclick="location.href='./ui/login.html'">Login</button>
@@ -109,9 +121,9 @@
         </header>
         <!-- ===== End:: header-wrapper ===== -->
         <!-- ======= Start:: content Body ================== -->
-        <main class="body-section ">
+        <main class="body-section " >
             <!-- start:: about me card -->
-            <div class="card-container">
+            <div class="card-container" id="about-me">
                 <div class="title c-padding">
                     <div class="body-content-header">
                         <h3 class="leon">About me</h3>
@@ -181,7 +193,7 @@
             </div>
             <!-- End:: about me card  -->
             <!-- start:: Skills me card -->
-            <div class="card-container">
+            <div class="card-container" id="my-skill">
                 <div class="title c-padding">
                     <div class="body-content-header">
                         <h3 class="leon">Skills</h3>
@@ -270,7 +282,7 @@
             </div>
             <!-- End:: Skills me card  -->
             <!-- start:: Project card -->
-            <div class="card-container">
+            <div class="card-container" id="my-project">
                 <div class="title c-padding">
                     <div class="body-content-header">
                         <h3 class="leon">Project</h3>
@@ -299,7 +311,7 @@
                         </div>   
                         <div class="r-card">
                             <div class="top-image">
-                                <img src="./images/_HfYk04kY0ZQ.jpg" alt="" srcset="">
+                                <img src="./images/HfYk04kY0ZQ.jpg" alt="" srcset="">
                             </div>
                             <div class="r-card-body">
                                 <div class="r-card-title">
@@ -316,7 +328,7 @@
                         </div>  
                         <div class="r-card">
                             <div class="top-image">
-                                <img src="./images/_bwOAixLG0uc.png" alt="" srcset="">
+                                <img src="./images/bwOAixLG0uc.png" alt="" srcset="">
                             </div>
                             <div class="r-card-body">
                                 <div class="r-card-title ">
@@ -332,7 +344,7 @@
                         </div>
                         <div class="r-card">
                             <div class="top-image">
-                                <img src="./images/_bwOAixLG0uc.png" alt="" srcset="">
+                                <img src="./images/bwOAixLG0uc.png" alt="" srcset="">
                             </div>
                             <div class="r-card-body">
                                 <div class="r-card-title ">
@@ -354,7 +366,7 @@
             <div class="card-container blog-section">
                 <div class="title c-padding">
                     <div class="body-content-header">
-                        <h3 class="leon">Blog</h3>
+                        <h3 class="leon">Blogs</h3>
                         <div class="Skills underline"></div>
                     </div>
                 </div>
@@ -418,7 +430,7 @@
                             </div>
                         </div> 
                         <div class="more" >
-                            <button class="browse-more" >Browse more blog</button>
+                            <button class="browse-more"  onclick="location.href='./ui/browse.html'">Browse more blog</button>
                         </div>
                     </div>                      
                 </div>
@@ -503,13 +515,13 @@
                         </div>                        
                     </div>
                 </div>
-                <div class="contact-me">
+                <div class="contact-me" id="contact-me">
                     <div class="body-content-header">
                         <h3 class="highligh-f">Contact me</h3>
                         <div class="contact underline"></div>
                     </div>
                     <div class="contact-form">
-                        <form action="#" method="post">
+                        <form action="#" method="post" id="contact-form-field">
                             <div class="form-fields">
                                 <div class="input-field">
                                     <input type="email" placeholder="Email" name="" id="email">
@@ -522,7 +534,7 @@
                                 </div>
                                 <div class="input-field">
                                     <div class="send">
-                                        <button>Send</button>
+                                        <button type="submit"  >Send</button>
                                     </div>  
                                 </div>
                             </div>                                                                
@@ -566,8 +578,10 @@
             </div>                
         </footer>
         <!-- ================ End:: content Footer ========= -->
+       
       </div>
     <!-- ======= End:: content wrapper ====================================-->
+    <script src="./js/provider.js"></script>
     <script src="./js/script.js"></script>
 </body>
 </html>
