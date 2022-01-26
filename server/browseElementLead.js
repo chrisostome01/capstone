@@ -235,22 +235,9 @@ const deleteThisBlog = (blogId) => {
     
 }
 
-const readThisBlog = (blogId) => {
-    localStorage.setItem("blogId",blogId);
-    location.href = './blog.html';
-}
+
 
 const updateThisBlog = (blogId) => {
-    var query =database.ref('Blogs').orderByChild('id').limitToFirst(1).equalTo(blogId);
-    query.once("value", function(snapshot) {
-        console.log(snapshot.val());
-        snapshot.forEach(function(child) {
-            child.ref.update({
-                id : blogId,
-                name:'sezera'
-            });
-            location.href ='./blog.html';
-        })
-    })  
-    displayBlog(9);
+    localStorage.setItem("blogId",blogId);
+    location.href = './blogupdate.html';    
 }
