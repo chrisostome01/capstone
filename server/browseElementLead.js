@@ -125,28 +125,29 @@ blogForm.addEventListener('submit',(sub) => {
                 console.log(error.message);
               },
               function () {
-                uploadTask.snapshot.ref.getDownloadURL().then(function (downloadURL) {
-                    
-                // getting date 
-                const today = new Date();
-                const date = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate() + " " + today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds(); ;
-                //Createing a blog
-                BlogTable.push().set({
-                    "id" : uniqueid ,
-                    "creatorId": userInfo.id,
-                    "Title" : title,
-                    "Subtitle" : Subtitle,
-                    "dateCreated":date,
-                    "info" : Information,
-                    "rate" : 1,
-                    "postBanner" : downloadURL
-                });
-                document.getElementById('blog-model').classList.remove('blog-active');
-                showNotification(`!`,'Fetched','success');
-                displayBlog();
-                blogForm.reset(); 
-                    
-                });
+                uploadTask.snapshot.ref.getDownloadURL()
+                    .then(function (downloadURL) {
+                        
+                            // getting date 
+                            const today = new Date();
+                            const date = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate() + " " + today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds(); ;
+                            //Createing a blog
+                            BlogTable.push().set({
+                                "id" : uniqueid ,
+                                "creatorId": userInfo.id,
+                                "Title" : title,
+                                "Subtitle" : Subtitle,
+                                "dateCreated":date,
+                                "info" : Information,
+                                "rate" : 1,
+                                "postBanner" : downloadURL
+                            });
+                            document.getElementById('blog-model').classList.remove('blog-active');
+                            showNotification(`!`,'Fetched','success');
+                            displayBlog();
+                            blogForm.reset(); 
+                                
+                    });
               }
           
           );
