@@ -95,7 +95,7 @@ html{
     align-items: center;
     transform: translateX(100%);
     transition: transform 0.5s ease-in-out;
-    z-index: 9999999;
+    z-index: 85;
 }
 .nav ul {
     display: none !important;
@@ -821,7 +821,7 @@ form textarea{
   border-radius: 10px;
   min-width: 350px;
   min-height: 90px;
-  z-index: 999999911;
+  z-index: 100;
   box-shadow: var(--shadow);  
   position: fixed;
   top:5%;
