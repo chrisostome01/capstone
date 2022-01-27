@@ -98,6 +98,7 @@ const gettingSelectBogData = (blogIdSent) => {
                                 </div>
                             </div>
                         </div>`;
+                   
 
             }
         blogReadingSide.innerHTML = htmlInfo;
