@@ -1092,3 +1092,13 @@ input:focus {
     left:45%;
   }
 }
+
+input{
+  text-align: left !important;
+  padding: 20px;
+}
+
+textarea{
+  text-align: left !important;
+  padding: 20px;
+}
