@@ -24,7 +24,7 @@ body{
     width: 100%;
     overflow-x: hidden;   
     overflow-y: hidden; 
-    background: linear-gradient(0deg, rgba(56, 123, 160, 0.06), rgba(56, 123, 160, 0.06)), url("../images/email-pattern.png");
+    background: linear-gradient(0deg, rgba(56, 123, 160, 0.06), rgba(56, 123, 160, 0.06)), url("../assets/images/email-pattern.png");
 }
 html{
     width:100%;
@@ -231,7 +231,7 @@ html{
     height: 500px;
     background-size: cover;
     background-repeat: no-repeat;
-    background-image:  linear-gradient(0deg, rgba(0, 0, 0, 0.596), rgba(0, 0, 0, 0.363)),url("../images/8604D572-1E97-4429-BB41-8E9602F21499.png");
+    background-image:  linear-gradient(0deg, rgba(0, 0, 0, 0.596), rgba(0, 0, 0, 0.363)),url("../assets/images/8604D572-1E97-4429-BB41-8E9602F21499.png");
     position: relative;
     clear:both;
 }
@@ -352,7 +352,7 @@ html{
   .image-bg{
     width: 280px;
     height: 379px; 
-    background-image:  linear-gradient(0deg, rgba(0, 0, 0, 0.426), rgba(0, 0, 0, 0.363)),url("../images/8604D572-1E97-4429-BB41-8E9602F21499.png");
+    background-image:  linear-gradient(0deg, rgba(0, 0, 0, 0.426), rgba(0, 0, 0, 0.363)),url("../assets/images/8604D572-1E97-4429-BB41-8E9602F21499.png");
     z-index: 2;
     background-size: cover;
     background-repeat: no-repeat;
