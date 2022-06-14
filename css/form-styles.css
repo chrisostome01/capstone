@@ -63,7 +63,7 @@ form.login input{
     width: 85% !important;
 }
 .login .form-fields{
-    padding: 1rem;
+    padding: 16px;
 }
 .login label{
     color: rgba(32, 32, 32, 0.624);
@@ -133,7 +133,7 @@ form.login input{
     font-family: 'Poppins' ,sans-serif;
     font-weight: 500;
     font-size: 14px;
-    padding: 1rem 0rem 1rem 1rem;
+    padding: 16px 0px 16px 16px;
 }
 
 
@@ -176,13 +176,13 @@ form.login input{
         margin-bottom: 9px;       
     }
     .footer-section{
-        margin-top: 8rem;
+        margin-top: 128px;
     }
     .form-container{
-        margin-top: 3rem;
+        margin-top: 48px;
     }
     .login .form-fields{
-        padding: 2rem;
+        padding: 32px;
     }
 }
 @media screen and (min-width: 900px ) {

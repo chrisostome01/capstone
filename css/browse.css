@@ -10,7 +10,7 @@
   
     .leader{
         width: 340px;  
-        margin: 2rem;     
+        margin: 32px;     
     }
     .r-card{
         width: 100%;  
@@ -21,7 +21,7 @@
 @media screen and (min-width:513px){
     .leader{
         width: 80%;  
-        margin: 1rem;     
+        margin: 16px;     
     }
     .r-card{
         width: 80%;  
@@ -33,7 +33,7 @@
     
     .leader{
         width: 340px;  
-        margin: 1rem;     
+        margin: 16px;     
     }
     .r-card{
         width: 340px;  
@@ -41,7 +41,7 @@
     }
     .more{
         width: 100%;
-        padding-right: 1rem ;
+        padding-right: 16px ;
     }
 }
 @media screen and (min-width:900px){
@@ -138,7 +138,7 @@
 @media screen and (min-width:1400px) {
     .leader{
         width: 310px;  
-        margin: 1rem;     
+        margin: 16px;     
     }
     .r-card{
         width: 300px;  

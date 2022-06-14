@@ -1,13 +1,4 @@
-/* Database configuration */
-const firebaseConfig = {
-    apiKey: "AIzaSyDyhJPX5hGXmkVCjWiDYDgxW8Ongh0YZqU",
-    authDomain: "capstone-d17ab.firebaseapp.com",
-    projectId: "capstone-d17ab",
-    storageBucket: "capstone-d17ab.appspot.com",
-    messagingSenderId: "658315154433",
-    appId: "1:658315154433:web:ee6855874b6ed722da1c00",
-    databaseURL:"https://capstone-d17ab-default-rtdb.europe-west1.firebasedatabase.app"
-};
+
 /* Initialize Database  */
 const app = firebase.initializeApp(firebaseConfig);
 const database = app.database();
@@ -30,11 +21,12 @@ elementLeader();
 /* == End:: removing useful elemnt if user is not logged in */
 // usefull valiable
 var limitInterval = 2 ;
+var addToInterVal = 3 ;
 /* =====Start Getting Db ref ======= */
 const Blogs = database.ref('Blogs');
 /* =====End Getting Db ref ======= */
 
-/*  ====================== Start:: Getting selected blog information =======================*/
+/*  ====================== Start:: Getting selected blog information ============= */
 const gettingSelectBogData = (blogIdSent) => {
     const query = Blogs.orderByChild('id').limitToFirst(1).equalTo(blogIdSent);
     var blogReadingSide = document.getElementById('blog-reading-side');
@@ -95,8 +87,8 @@ const gettingSelectBogData = (blogIdSent) => {
                                     </svg>                                                    
                                 </div>
                                 <div class="comment">
-                                    <div class="comment-icon">
-                                    <img src="../assets/svgs/comment.svg" alt="" srcset="">                                                                                                             
+                                    <div class="comment-icon" id="commentbtn" >
+                                        <img src="../assets/svgs/comment.svg" alt="" srcset="">                                                                                                             
                                     </div>
                                     <div class="comment-counter">
                                         <span>
@@ -106,15 +98,16 @@ const gettingSelectBogData = (blogIdSent) => {
                                 </div>
                             </div>
                         </div>`;
+                   
 
             }
         blogReadingSide.innerHTML = htmlInfo;
     })  
 }
-gettingSelectBogData(blogId);
-/*  ====================== End:: Getting selected blog information =======================*/
+// gettingSelectBogData(blogId);
+/*  ====================== End:: Getting selected blog information =============== */
 
-/* =======================Start::  Getting summary Blog info =========================== */
+/* =======================Start::  Getting summary Blog info ============= */
 const gettingSummaryBlog = (limitiParam = null) => {
     var limitValues = limitiParam != null ? limitInterval : limitInterval + 1 ;
     var query = Blogs.limitToLast(limitValues);
@@ -165,11 +158,123 @@ const gettingSummaryBlog = (limitiParam = null) => {
     })
 }
 gettingSummaryBlog();
-/* =======================End::  Getting summary Blog info =========================== */
+/* =======================End::  Getting summary Blog info =============== */
 /* =======================Start::  Select Blog =========================== */
 const revealNewBlog = (newBlogId) => {
-  
     gettingSelectBogData(newBlogId);
 }
 /* =======================Start::  Select Blog =========================== */
-//Implimanting search
+//Implimanting commenting
+
+const commentBtn = document.getElementById('commentbtn');
+commentBtn != null ? 
+    commentBtn.addEventListener('click' , () => {
+        const commentingSection = document.getElementById('commenting-section');     
+        commentingSection.classList.toggle('hidden-comment');
+    })
+: '';
+
+const postBtn = document.getElementById('post-comment');
+postBtn != null ?
+    postBtn.addEventListener('click' , () => {
+        const commentInfo = isEmpty('commenting-area' , 'Comment');
+        // getting date 
+        const today = new Date();
+        const date = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate() + " " + today.getHours() + ":" + today.getMinutes() ;
+
+        if(commentInfo.pass){
+            const commentTable = database.ref('Comments');
+            const uniqueId = commentTable.push().key;
+            if(userInfo != null){
+                commentTable.push().set({
+                    "id": uniqueId,
+                    "userId":userInfo.id,
+                    "commentedOn":blogId,
+                    "comment":commentInfo.value,
+                    "commentedDate":date
+                })
+                .then(() => {
+                    showNotification('!','Your comment have been posted','success');
+                    document.getElementById('commenting-area').value = '';
+                })
+                .catch((error) =>{
+                    showNotification('!','Please try to make sure you are connected to the internet and try again','error');
+                })
+            }
+        }
+        addToInterVal += 1;
+        getComment();
+    })
+: '';
+
+var moreComent = document.getElementById('moreComment');
+const getComment = (addTo = null) =>{
+    const commentDetail = document.getElementById('comment-details-section');
+    const commentTable = database.ref('Comments');
+    const userTable = database.ref('users');
+    const query  = commentTable.orderByChild('commentedOn').limitToFirst(addToInterVal).equalTo(blogId);
+    var htmlInfo = `
+        <div class="commenters-details">
+            <div class="user-comment">       
+                <div class="user-comment-info ">
+                    <div class="comment-words success">
+                        No Comment found
+                    </div>
+                </div>
+            </div>
+            <div class="comment-divider"></div>
+        </div>`;
+        
+    query.on('value', (snap) =>{
+        let data = snap.val();
+        if(snap.exists()){
+            htmlInfo = ``;
+            
+            for(let i in data){
+                const commentedByQuery  = userTable.orderByChild('id').limitToFirst(1).equalTo(data[i].userId);
+                var commenterUsername = '';
+                var commenterProfile = '';
+                commentedByQuery.on('value' , (snap) =>{
+                    const userData = snap.val();
+                   
+                    for(let i in userData){
+                        commenterUsername = userData[i].Username;
+                        commenterProfile = userData[i].profile;
+                    }
+                    htmlInfo +=`
+                    <div class="commenters-details">
+                        <div class="user-comment">
+                            <div class="user-profile">
+                                <img src="${commenterProfile}" id="profile"  alt="sezerano">
+                            </div>
+                            <div class="user-comment-info">
+                                <p class="leon" > ${commenterUsername}</p>
+                                <div class="comment-words">
+                                   ${data[i].comment}
+                                </div>
+                            </div>
+                        </div>                     
+                        <div class="comment-divider"></div>
+                    </div>
+                    `;
+                    moreComent.innerHTML = 'Get more comments';
+                }) 
+                
+               
+            }
+            commentDetail.innerHTML = htmlInfo;
+            moreComent.innerHTML = 'Get more comments';
+        }
+        else{
+            moreComent.remove();
+            commentDetail.innerHTML = htmlInfo;
+        }
+        
+    })
+}
+
+getComment();
+moreComent.addEventListener('click' , () => {
+    addToInterVal += 1 ;
+    getComment();
+})

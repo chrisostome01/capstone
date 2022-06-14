@@ -1,27 +1,10 @@
-//setting up firebase
-const firebaseConfig = {
-    apiKey: "AIzaSyDyhJPX5hGXmkVCjWiDYDgxW8Ongh0YZqU",
-    authDomain: "capstone-d17ab.firebaseapp.com",
-    projectId: "capstone-d17ab",
-    storageBucket: "capstone-d17ab.appspot.com",
-    messagingSenderId: "658315154433",
-    appId: "1:658315154433:web:ee6855874b6ed722da1c00",
-    databaseURL:"https://capstone-d17ab-default-rtdb.europe-west1.firebasedatabase.app"
-};
-/* Initialize Database  */
-const app = firebase.initializeApp(firebaseConfig);
-const database = app.database();
-const auth = firebase.auth();
-var userInfo = JSON.parse(localStorage.getItem('userInfo'));
-
-//var blogId = JSON.parse(localStorage.getItem('blogId'));
 console.log(userInfo);
 
-const getBog = (blogId = null ) => {
-    var query =database.ref('Blogs').orderByChild('id').limitToFirst(1).equalTo(blogId);
-    query.once("value", function(snapshot) {
-        console.log(snapshot.val());
-        snapshot.forEach(function(child) {
-        })
-    })   
-}
+$.ajax({
+    url:'http://capstonetyu.herokuapp.com/api/v1/comments?limit=30&q=61e66297ce945bbaff5682d9',
+    method:'GET',
+    success:(data)=>{
+        console.log(data);
+    } 
+
+});

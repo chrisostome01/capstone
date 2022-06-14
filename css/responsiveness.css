@@ -17,7 +17,7 @@
 @media screen and (min-width:513px){
     .leader{
         width: 80%;  
-        margin: 1rem;     
+        margin: 16px;     
     }
     .r-card{
         width: 80%;  
@@ -38,7 +38,7 @@
     }    
     .leader{
         width: 340px;  
-        margin: 1rem;     
+        margin: 16px;     
     }
     .r-card{
         width: 340px;  
@@ -46,7 +46,7 @@
     }
     .more{
         width: 100%;
-        padding-right: 1rem ;
+        padding-right: 16px ;
     }
 }
 /* min-lapstop */
@@ -132,7 +132,7 @@
         width: 280px;
         height: 379px; 
         top: 6%;
-        background-image:  linear-gradient(0deg, rgba(0, 0, 0, 0.426), rgba(0, 0, 0, 0.363)),url("../images/8604D572-1E97-4429-BB41-8E9602F21499.png");
+        background-image:  linear-gradient(0deg, rgba(0, 0, 0, 0.426), rgba(0, 0, 0, 0.363)),url("../assets/images/8604D572-1E97-4429-BB41-8E9602F21499.png");
         z-index: 2;
         background-size: cover;
         background-repeat: no-repeat;
@@ -148,7 +148,7 @@
     /* End:: header content */
     .more{
         width: 100%;
-        padding-right: 12rem ;
+        padding-right: 132px ;
     }
 }
 
@@ -183,7 +183,7 @@
     .header-image-oscreen{    
         width: 340px;
         height: 420px;
-        background-image:  linear-gradient(0deg, rgba(0, 0, 0, 0.426), rgba(0, 0, 0, 0.363)),url("../images/8604D572-1E97-4429-BB41-8E9602F21499.png");
+        background-image:  linear-gradient(0deg, rgba(0, 0, 0, 0.426), rgba(0, 0, 0, 0.363)),url("../assets/images/8604D572-1E97-4429-BB41-8E9602F21499.png");
       
     }
     .oscreen.c-padding{
@@ -217,7 +217,7 @@
     }
     .more{
         width: 100%;
-        padding-right: 3.1rem ;
+        padding-right: 3.16px ;
     }
 }
 @media screen and (min-width:1150px) {    
@@ -236,7 +236,7 @@
 @media screen and (min-width:1400px) {
     .leader{
         width: 310px;  
-        margin: 1rem;     
+        margin: 16px;     
     }
     .r-card{
         width: 300px;  
@@ -269,6 +269,6 @@
     }
     .more{
         width: 100%;
-        padding-right: 8rem ;
+        padding-right: 128px ;
     }
 }

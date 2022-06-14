@@ -1,13 +1,4 @@
-/* Database configuration */
-const firebaseConfig = {
-    apiKey: "AIzaSyDyhJPX5hGXmkVCjWiDYDgxW8Ongh0YZqU",
-    authDomain: "capstone-d17ab.firebaseapp.com",
-    projectId: "capstone-d17ab",
-    storageBucket: "capstone-d17ab.appspot.com",
-    messagingSenderId: "658315154433",
-    appId: "1:658315154433:web:ee6855874b6ed722da1c00",
-    databaseURL:"https://capstone-d17ab-default-rtdb.europe-west1.firebasedatabase.app"
-};
+
 /* Initialize Database  */
 const app = firebase.initializeApp(firebaseConfig);
 const database = app.database();
@@ -134,28 +125,29 @@ blogForm.addEventListener('submit',(sub) => {
                 console.log(error.message);
               },
               function () {
-                uploadTask.snapshot.ref.getDownloadURL().then(function (downloadURL) {
-                    
-                // getting date 
-                const today = new Date();
-                const date = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate() + " " + today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds(); ;
-                //Createing a blog
-                BlogTable.push().set({
-                    "id" : uniqueid ,
-                    "creatorId": userInfo.id,
-                    "Title" : title,
-                    "Subtitle" : Subtitle,
-                    "dateCreated":date,
-                    "info" : Information,
-                    "rate" : 1,
-                    "postBanner" : downloadURL
-                });
-                document.getElementById('blog-model').classList.remove('blog-active');
-                showNotification(`!`,'Fetched','success');
-                displayBlog();
-                blogForm.reset(); 
-                    
-                });
+                uploadTask.snapshot.ref.getDownloadURL()
+                    .then(function (downloadURL) {
+                        
+                            // getting date 
+                            const today = new Date();
+                            const date = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate() + " " + today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds(); ;
+                            //Createing a blog
+                            BlogTable.push().set({
+                                "id" : uniqueid ,
+                                "creatorId": userInfo.id,
+                                "Title" : title,
+                                "Subtitle" : Subtitle,
+                                "dateCreated":date,
+                                "info" : Information,
+                                "rate" : 1,
+                                "postBanner" : downloadURL
+                            });
+                            document.getElementById('blog-model').classList.remove('blog-active');
+                            showNotification(`!`,'Fetched','success');
+                            displayBlog();
+                            blogForm.reset(); 
+                                
+                    });
               }
           
           );

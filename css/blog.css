@@ -55,7 +55,7 @@
 .blog-card{
     /* width: 100%; */
     min-width: 250px;
-    margin: 1rem 1rem 1rem 0px;
+    margin: 16px 16px 16px 0px;
     height: 100px;
     background-color: white;
     border-radius: 10px;
@@ -184,7 +184,7 @@
     font-size: 13px;
     margin-top: 6px;    
     color:rgba(10, 10, 10, 0.651);
-    margin-top: 1rem;
+    margin-top: 16px;
     max-width: 100%;
     overflow-x: auto;
 }
@@ -202,11 +202,11 @@
 /* Icons  */
 .voting{
     width:100%;
-    margin-top: 3rem;
+    margin-top: 48px;
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-bottom: 1rem;
+    margin-bottom: 16px;
 }
 .voting .icons{
     height: 20px;
@@ -381,7 +381,7 @@
     }
     .next-card-w{
         display:  block;
-        margin-top: 1rem ;
+        margin-top: 16px ;
         float: left;
         display: flex;
         justify-content: right;
@@ -458,3 +458,132 @@
     }
 }
 /*  ====== End:: Responsiviness ======  */
+
+/*  comment style */
+
+.hidden-comment{
+    opacity: 0;
+    width: 0%;
+    transition: all 1s ease-in-out;
+    position: absolute;
+}
+.comments-class{
+    background-color: white;
+    margin: 4px;
+    padding: 10px;
+    border-radius: 10px;
+    transition: all 0.4s ease-in-out;
+}
+.user-comment{
+    display: flex;   
+}
+.user-comment .user-profile{
+    width: 15%;
+    margin-right: 12px;
+}
+.user-comment .user-comment-info{
+    width: 85%;
+}
+.commenters-details{
+    margin-top: 9px;
+}
+.blog-reading-side .user-comment-info p {
+    font-weight: 600 !important;
+    font-size: 14px;
+}
+.comment-words{
+    font-weight: 400 !important;
+    color: rgb(116, 105, 116);
+    font-size: 12px;
+}
+.send-comment .send {
+    float: left;
+    display: flex;
+    justify-content: right;
+    margin: 0px;
+    width: 100%;
+}
+.comment-information{
+    max-height: 250px;
+    overflow: auto;
+}
+.postComment textarea{
+    width: 100%;
+    height: 90px;
+    left: 468px;
+    top: 197px;
+    text-align: center;
+    font-size: 17px;
+    background: #E1F1FA;
+    box-shadow: var(--textAreaShadow);
+    border-radius: 5px;
+    border:none;
+    outline: none;
+    align-items: center;
+}
+.comment-divider{
+    width: 100%;
+    height: 0px;
+    border: 2px solid rgba(0, 0, 0, 0.15);
+    margin-top: 9px;
+    margin-bottom: 9px;
+}
+
+.link{
+    color: var(--main);
+    cursor: pointer;
+
+}
+.link:hover{
+    color: steelblue;
+    
+    
+}
+/* commenting responsiveness */
+@media screen and (min-width:700px) {
+        
+    .comments-class{
+        box-shadow: var(--shadow);
+        width: 75%;
+        position: absolute;
+        z-index: 90;
+        right:0% ;
+        padding: 30px;
+    }
+    .user-comment .user-profile{
+        width: 10%;
+    }
+}
+@media screen and (min-width:900px) {
+        
+    .comments-class{
+        width: 65%;   
+        right:6% ;     
+    }
+}
+@media screen and (min-width:1024px) {
+        
+    .comments-class{
+        width: 50%;   
+        right:6% ;     
+        
+    }
+}
+@media screen and (min-width:1200px) {
+    .comments-class{
+        width: 500px;   
+        right:9% ;     
+        
+    }
+}
+
+@media screen and (min-width:1400px) {
+    .comments-class{
+        width: 450px;   
+        right:19% ;     
+        
+    }
+    .user-comment .user-profile{
+        height: 10%;
+    }
+}

@@ -290,6 +290,7 @@ const isEmpty = (elementId , comment) => {
     return errorStatus;
 } 
 /* =============== end:: validating subject and comment====================== */
+
 /* =============== validating subject and comment =========================== */
 const fillin = (elementId , comment) => {
     let place = document.getElementById(`${elementId}`);
@@ -299,15 +300,20 @@ const fillin = (elementId , comment) => {
 
 /* =============== Start:: Element customisation ================================= */ 
 const elementLeader = () => {
+    const comment = document.getElementById('comment-form') ;
     if(userInfo == null){
         const postCard = document.getElementById('postCard') ;
         postCard != null ? postCard.remove() : '' ;
+        
+        comment != null ? comment.remove() : '' ;
     }
     else{
         if(userInfo.userType != 'admin'){
             const showBlogFormButton = document.getElementById('showBlogCreatModel') ;
             showBlogFormButton != null ? showBlogFormButton.remove() : '' ;
         }
+        comment != null ? comment.classList.toggle('hidden-comment'): '' ;
+        
     }
     
     // Getting profile

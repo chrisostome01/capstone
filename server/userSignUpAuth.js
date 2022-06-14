@@ -169,7 +169,7 @@ signUpGoogle.addEventListener('click',()=>{
                 }) 
             }
             else{
-                showNotification('!','Your Email have already been signup here', 'error');
+                showNotification('!','Your Email have already been signed up here', 'error');
             }
            
         })
